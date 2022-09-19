@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href='https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css' rel='stylesheet'>
+    <title>PhoneWeb</title>
+
+    <style>
+
+        body{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            width: 100%; 
+            background: rgb(207, 232, 240); 
+            display: flex; 
+            flex-wrap: wrap;
+        }
+
+        header{
+            width: 100%; 
+            display: flex;
+            align-items: center;
+            margin: 1.5%;
+        }
+
+        header a{
+            width: 50%;
+            display: flex;
+            text-decoration: none;
+            color: black;
+        }
+
+        .logo{
+            width: 8%; 
+            height: 75px;
+        }
+
+        h1{
+            margin-left: 4%;
+        }
+
+        form{
+            width: 50%; 
+            height: 5vh; 
+
+            display: flex; 
+            justify-content: flex-end; 
+        }
+
+        input{
+            width: 45%;
+            padding: 1%;
+
+            font-size: 1.3em;
+        }
+
+        button{
+            padding: 1%;
+            display: flex;
+            align-items: center;
+
+            font-size: 2em;
+            background-color: rgb(150, 204, 223); 
+            border: 1px solid grey;
+            transition: 0.5s;
+        }
+
+        button:hover{
+            cursor: pointer;
+            background-color: rgb(182, 230, 248);
+            box-shadow: 0px 0px 17px 3px rgb(182, 230, 248);
+            transition: 0.5s;
+        }
+
+        .navegador{
+            width: 100%; 
+            justify-content: center; 
+            display: flex;
+            font-size: 1.3em;
+            background-color: rgb(150, 204, 223);
+        }
+
+        .navegador ul{
+            list-style: none; 
+            display: flex; 
+            width: 60%; 
+            justify-content: space-around;
+        }
+
+        .navegador li a{
+            text-decoration: none; 
+            color: black;
+            transition: 0.5s;
+        }
+
+        .navegador li a:hover{
+            color: rgb(15, 106, 139);
+            transition: 0.5s;
+        }
+
+        .navegador li:hover{
+            color: rgb(15, 106, 139);
+            transition: 0.5s;
+        }
+
+        .navegador li{
+            position: relative;
+        }
+
+        .navegador li > ul{
+            display: none;
+        }
+        
+        .navegador li:hover > ul{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+
+            position: absolute;
+            top: 40px;
+            left: 0px;
+
+            background-color: rgb(150, 204, 223);
+        }
+
+        .texto{
+            width: 100%; 
+            margin-top: 3%; 
+            margin: 1.5%; 
+            text-align: center;
+        }
+
+        .texto p{
+            font-size: 1.2em;
+        }
+
+        .ventas{
+            width: 100%; 
+            text-align: center;
+        }
+
+        .ventas h2{
+            padding-bottom: 2%;
+            font-size: 1.8em;
+        }
+
+        .ventas .precio{
+            font-size: 1.8em;
+            font-weight: 300;
+        }
+
+        .ventas .oferta{
+            font-size: 1.8em;
+            font-weight: 300;
+            position: relative;
+
+            color: rgb(214, 85, 85);
+        }
+
+        .ventas .mensaje{
+            position: absolute;
+
+            font-size: 0.8em;
+            color: rgb(214, 85, 85);
+
+            top: 870px;
+            text-align: center;
+
+            opacity: 0%;
+            transition: 0.5s;
+        }
+
+        .ventas .oferta:hover ~ .mensaje{
+            opacity: 100%;
+            transition: 0.5s;
+        }
+
+        .imagenes{
+            width: 100%; 
+            display: flex; 
+            justify-content: space-evenly;
+        }
+
+        .imagenes a{
+            text-decoration: none; 
+            color: black; 
+            font-size: 1.3em;
+        }
+
+        .imagenes img{
+            height: 300px;
+            border-radius: 20px;
+            opacity: 80%;
+            box-shadow: 0px 9px 30px -8px rgb(24, 101, 129);
+            transition: 0.5s;
+        }
+
+        .imagenes img:hover{
+            opacity: 100%;
+            transition: 0.5s;
+        }
+
+        footer{
+            width: 100%; 
+            text-align: center; 
+            margin-top: 2%; 
+            padding: 1%;
+            background: rgb(150, 204, 223);
+        }
+
+        footer p{
+            font-size: 1.3em;
+        }
+
+        footer a{
+            text-decoration: none; 
+            color: black; 
+            padding-right: 1%;
+        }
+
+        footer i{
+            transition: 0.5s;
+        }
+
+        footer i:hover{
+            transition: 0.5s;
+            transform: translateY(-8px);
+        }
+
+        .bxl-linkedin-square:hover{
+            color: #0e76a8;
+        }
+
+        .bxl-facebook-circle:hover{
+            color: #3b5998;
+        }
+
+        .bxl-twitter:hover{
+            color: #00acee;
+        }
+
+        .bxl-instagram-alt:hover{
+            color: #C13584;
+        }
+
+    </style>
+
+</head>
+<body>
+    <header>
+        <a href="#">
+            <img class="logo" src="logo.png" alt="logo">
+            <h1>PhoneWeb</h1>
+        </a>
+
+        <form>
+            <input type="text" name="buscar" id="buscar" placeholder="¿Qué buscas?">
+            <button><i class='bx bx-search-alt-2' style='color:#ffffff'  ></i></button>
+        </form>
+    </header>
+
+    <nav class="navegador">
+        <ul class="lista">
+            <li><a href="#">Noticias</a></li>
+            <li><a href="contacto.html">Contacto</a></li>
+            <li><a href="#">Cuestionario de Satisfacción</a></li>
+            <li><a href="#">Carrito</a></li>
+        </ul>
+    </nav>
+
+    <section class="texto">
+        <p>
+            La mejor tienda de toda Canarias para la compra y venta de dispositivos móviles. Aquí podrás 
+            encontrar una gran variedad de marcas y productos para que te hagas con el dispositivo de tus 
+            sueños al mejor precio posible.
+        </p> 
+    </section>
+
+    <section class="ventas">
+        <h2>Los más vendidos de la semana</h2>
+        <section class="imagenes">
+            <a href="#">
+                <img src="iphone14.jpg" alt="iphone14">
+                <p>Iphone 14</p>
+                <p class="precio">877.50€</p>
+            </a>
+            <a href="#">
+                <img src="samsung s22.jpg" alt="samsungS22">
+                <p>Samsung S22</p>
+                <p class="precio">759€</p>
+            </a>
+            <a href="#">
+                <img src="samsungZFlip3.jpg" alt="samsungZFlip3">
+                <p>Samsung Z Flip 3</p>
+                <p class="oferta">700.50€</p>
+                <p class="mensaje">SOLO HASTA FINAL DE EXISTENCIAS</p>
+            </a>
+            <a href="#">
+                <img src="oppoReno3Pro.jpg" alt="oppoReno3Pro">
+                <p>Oppo Reno 3 Pro</p>
+                <p class="precio">316€</p>
+            </a>
+        </section>
+    </section>
+
+    <footer>
+        <p>PhoneWeb S.L.</p>
+        <nav style="width: 100%; font-size: 2em;">
+            <a href="#"><i class='bx bxl-linkedin-square' ></i></a>
+            <a href="#"><i class='bx bxl-facebook-circle' ></i></a>
+            <a href="#"><i class='bx bxl-twitter'></i></a>
+            <a href="#"><i class='bx bxl-instagram-alt'></i></a>          
+        </nav>
+    </footer>
+</body>
+</html>
