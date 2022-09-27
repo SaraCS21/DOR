@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="etiquetas.css">
+    <title>Creación de Formularios</title>
+</head>
+<body>
+    <header>
+        <h1>Creación de Formularios</h1>
+    </header>
+    <nav>
+        <ul class="principal">
+            <li class="lvl1">
+                <a href="creacion.html">Creación de formularios</a>
+                <ul>
+                    <li>
+                        <a href="#">Form</a>
+                    </li>
+                    <li>
+                        <a href="#">Fieldset</a>
+                    </li>
+                    <li>
+                        <a href="#">Legend</a>
+                    </li>
+                </ul>
+            </li>
+            <li class="lvl1">
+                <a href="#">Entradas de datos</a>
+                <ul>
+                    <li>
+                        <a href="#">Label</a>
+                    </li>
+                    <li>
+                        <a href="#">Input</a>
+                    </li>
+                    <li>
+                        <a href="#">Textarea</a>
+                    </li>
+                </ul>
+            </li>
+            <li class="lvl1">
+                <a href="#">Listas desplegables</a>
+                <ul>
+                    <li>
+                        <a href="#">Select</a>
+                    </li>
+                    <li>
+                        <a href="#">Datalist</a>
+                    </li>
+                    <li>
+                        <a href="#">Option</a>
+                    </li>
+                    <li>
+                        <a href="#">Optgroup</a>
+                    </li>
+                </ul>
+            </li>
+            <li class="lvl1">
+                <a href="#">Botones</a>
+            </li>
+            <li class="lvl1">
+                <a href="#">Output</a>
+            </li>
+        </ul>
+    </nav>
+
+    <main>
+        <section class="info">
+            <!-- FORM-->
+            <h2>Etiqueta Form</h2>
+            <p class="texto">Principalmente para crear un formulario en HTML es imprescindible conocer la etiqueta &ltform&gt, dentro de esta escribiremos todo el código relacionado con nuestros formularios. También podemos pasarle un parámetro a esta etiqueta, el cuál indicará la función a la que llamaremos cuando enviemos el formulario.</p>
+            <section class="codigo">
+                <p>&lt<span class="etiqueta">form</span> <span class="atributos">action</span>=""&gt</p>
+                <br>
+                <p class="indentado1 comentario">&lt!-- Código dentro de nuestro formulario --&gt</p>
+                <br>
+                <p>&lt/<span class="etiqueta">form</span>&gt</p>
+            </section>
+
+            <p>También debemos saber que hay otros atributos de los que podemos hacer uso en esta etiqueta.</p>
+            <h3>autocomplete</h3>
+            <p>Indica si los valores del formularios pueden, o no, ser escritos de manera automática con los datos que el sistema tiene guardados sobre nosotros. Tiene dos posibles valores:</p>
+            <p class="indentado1"><span class="destacado">off:</span> el usuario deberá escribir todos los campos.</p>
+            <p class="indentado1"><span class="destacado">on:</span> el navegador recomendará al usuario con posibles datos para completar los campos.</p>
+
+            <h3>method</h3>
+            <p>Es el método que usa el navegador para enviar el formulario. Tiene dos posibles valores:</p>
+            <p class="indentado1"><span class="destacado">post:</span> los datos que pase el usuario son incluídos en el cuerpo del formulario y enviado al servidor.</p>
+            <p class="indentado1"><span class="destacado">get:</span> los datos que pase el usuario son incluídos en la URI del atributo action, con un "?" como separador, y enviada al servidor.</p>
+
+            <!-- Fieldset -->
+            <h2>Etiquetas Fieldset y Legend</h2>
+            <p class="texto">Permite separar el formulario en diferentes secciones. Permite tener una etiqueta legend, de manera opcional, para darle título a la sección</p>
+            <section class="codigo">
+                <p>&lt<span class="etiqueta">form</span> <span class="atributos">action</span>=""&gt</p>
+                <br>
+                <p class="indentado1">&lt<span class="etiqueta">fieldset</span>&gt</p>
+                <p class="indentado2">&lt<span class="etiqueta">legend</span>&gtTítulo del bloque 1&lt/<span class="etiqueta">legend</span>&gt</p>
+                <p class="indentado2 comentario">&lt!-- Código dentro de nuestro formulario --&gt</p>
+                <p class="indentado1">&lt/<span class="etiqueta">fieldset</span>&gt</p>
+                <br>
+                <p class="indentado1">&lt<span class="etiqueta">fieldset</span>&gt</p>
+                <p class="indentado2">&lt<span class="etiqueta">legend</span>&gtTítulo del bloque 2&lt/<span class="etiqueta">legend</span>&gt</p>
+                <p class="indentado2 comentario">&lt!-- Código dentro de nuestro formulario --&gt</p>
+                <p class="indentado1">&lt/<span class="etiqueta">fieldset</span>&gt</p>
+                <br>
+                <p>&lt/<span class="etiqueta">form</span>&gt</p>
+            </section>
+        </section>
+    </main>
+
+    <form action="">
+        <fieldset>
+            <legend>Título del bloque 1</legend>
+            <!-- Código del formulario -->
+        </fieldset>
+        
+        <fieldset>
+            <legend>Título del bloque 2</legend>
+            <!-- Código del formulario -->
+        </fieldset>
+    </form>
+
+
+</body>
+</html>

@@ -1,0 +1,106 @@
+/* Estilos generales */
+
+*{
+    margin: 0 auto;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+header{
+    margin: 3%;
+    display: flex;
+    justify-content: center;
+}
+
+header h1{
+    text-align: center;
+}
+
+main{
+    width: 80%;
+    font-size: 1.2rem;
+}
+
+nav{
+    padding: 2%;
+    width: 100%;
+    background-color: antiquewhite;
+}
+
+.principal{
+    width: 80%;
+    display: flex;
+}
+
+a{
+    text-decoration: none;
+    color: black;
+}
+
+li{
+    list-style: none;
+}
+
+.lvl1 > ul{
+    display: none;
+}
+
+.lvl1:hover > ul{
+    display: block;
+}
+
+/* Estilos páginas separadas */
+
+main{
+    width: 100%;
+
+    display: flex;
+    justify-content: center;
+}
+
+.info{
+    width: 80%;
+}
+
+.info h2{
+    margin-top: 2%;
+    text-align: center;
+}
+
+.info .texto, .info h3{
+    margin-top: 2%;
+    margin-bottom: 2%;
+}
+
+.info .indentado1{
+    text-indent: 5%;
+}
+
+.info .indentado2{
+    text-indent: 10%;
+}
+
+.info .comentario{
+    color: rgb(110, 110, 110);
+    font-style: italic;
+}
+
+.info .codigo{
+    margin-bottom: 2%;
+    padding: 3%;
+    padding-left: 6%;
+    background-color: rgb(228, 228, 228);
+    border-radius: 10px;
+}
+
+.info .etiqueta{
+    color: rgb(223, 17, 86);
+}
+
+.info .atributos{
+    color: rgb(14, 134, 195);
+}
+
+.info .destacado{
+    font-weight: bold;
+}
