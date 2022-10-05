@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="etiquetas.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Display:wght@100;200;300&display=swap" rel="stylesheet">
+
+    <title>Output</title>
+</head>
+<body>
+    <header>
+        <h1>Output</h1>
+    </header>
+    <nav>
+        <ul class="principal">
+            <li class="lvl1">
+                <a href="index.html">Creación de formularios</a>
+                <ul>
+                    <li>
+                        <a href="index.html#form">Form</a>
+                    </li>
+                    <li>
+                        <a href="index.html#fieldset_legend">Fieldset y Legend</a>
+                    </li>
+                </ul>
+            </li>
+            <li class="lvl1">
+                <a href="entrada_datos.html">Entradas de datos</a>
+                <ul>
+                    <li>
+                        <a href="entrada_datos.html#label_input">Label e Input</a>
+                    </li>
+                    <li>
+                        <a href="entrada_datos.html#textarea">Textarea</a>
+                    </li>
+                </ul>
+            </li>
+            <li class="lvl1">
+                <a href="listas_desplegables.html">Listas desplegables</a>
+                <ul>
+                    <li>
+                        <a href="listas_desplegables.html#select_datalist">Select y Datalist</a>
+                    </li>
+                    <li>
+                        <a href="listas_desplegables.html#option_optgroup">Option y Optgroup</a>
+                    </li>
+                </ul>
+            </li>
+            <li class="lvl1">
+                <a href="botones.html">Botones</a>
+            </li>
+            <li class="lvl1">
+                <a href="output.html">Output</a>
+            </li>
+        </ul>
+    </nav>
+
+    <main>
+        <section class="info">
+            <h2>Etiqueta Output</h2>
+            <p class="texto">Representa la salida de un cálculo o proceso, normalmente llevado a cabo por un programa. Es puramente semántico y debería ser usado siempre para mostrar los resultados de un cálculo o proceso llevado a cabo en el documento.</p>
+            <section class="codigo">
+                <p>&lt<span class="etiqueta">form</span> <span class="atributos">action</span>=""&gt</p>
+                <br>
+                <p class="indentado1">&lt<span class="etiqueta">p</span>&gtValor a: <span class="etiqueta">input</span> <span class="atributos">type</span>="<span class="valores">number</span>" <span class="atributos">id</span>="<span class="valores">a</span>" <span class="atributos">value</span>="<span class="valores">0</span>"&gt&lt/<span class="etiqueta">p</span>&gt</p>
+                <p class="indentado1">&lt<span class="etiqueta">p</span>&gtValor b: <span class="etiqueta">input</span> <span class="atributos">type</span>="<span class="valores">number</span>" <span class="atributos">id</span>="<span class="valores">b</span>" <span class="atributos">value</span>="<span class="valores">0</span>"&gt&lt/<span class="etiqueta">p</span>&gt</p>
+                <p class="indentado1">&lt<span class="etiqueta">p</span>&gt<span class="etiqueta">input</span> <span class="atributos">id</span>="<span class="valores">boton_suma</span>" <span class="atributos">type</span>="<span class="valores">button</span>" <span class="atributos">value</span>="<span class="valores">calcular</span>"&gt&lt/<span class="etiqueta">p</span>&gt</p>
+                <p class="indentado1">&lt<span class="etiqueta">p</span>&gtResultado: <span class="etiqueta">output</span> <span class="atributos">id</span>="<span class="valores">number</span>" <span class="atributos">id</span>="<span class="valores">suma</span>" <span class="atributos">for</span>="<span class="valores">a b</span>"&gt&lt/<span class="etiqueta">p</span>&gt</p>
+                <br>
+                <p>&lt/<span class="etiqueta">form</span>&gt</p>
+            </section>
+    </main>
+
+    <form action="" class="output_ejemplo">
+        <section class="valor">
+            <p>Valor a: <input type="number" id="a" value="0" min="0" max="30"></p>
+            <p>Valor b: <input type="number" id="b" value="0" min="0" max="30"></p>    
+        </section>
+<p class="boton"><input id="boton_suma" type="button" value="Calcular"></p>
+        <p>Resultado: <output id="suma" for="a b"></output></p>
+    </form>
+
+    <script>
+
+        const boton_suma = document.querySelector("#boton_suma");
+
+        function suma(){
+            const a = document.querySelector("#a");
+            const b = document.querySelector("#b");
+            const resultado = parseInt(a.value) + parseInt(b.value);
+
+            const output = document.querySelector("output");
+            output.innerText = resultado;
+        }
+
+        boton_suma.addEventListener("click", suma)
+
+
+    </script>
+
+</body>
+
+
+
+</html>

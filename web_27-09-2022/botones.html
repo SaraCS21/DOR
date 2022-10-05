@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="etiquetas.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Display:wght@100;200;300&display=swap" rel="stylesheet">
+
+    <title>Botones</title>
+</head>
+<body>
+    <header>
+        <h1>Botones</h1>
+    </header>
+
+    <nav>
+        <ul class="principal">
+            <li class="lvl1">
+                <a href="index.html">Creación de formularios</a>
+                <ul>
+                    <li>
+                        <a href="index.html#form">Form</a>
+                    </li>
+                    <li>
+                        <a href="index.html#fieldset_legend">Fieldset y Legend</a>
+                    </li>
+                </ul>
+            </li>
+            <li class="lvl1">
+                <a href="entrada_datos.html">Entradas de datos</a>
+                <ul>
+                    <li>
+                        <a href="entrada_datos.html#label_input">Label e Input</a>
+                    </li>
+                    <li>
+                        <a href="entrada_datos.html#textarea">Textarea</a>
+                    </li>
+                </ul>
+            </li>
+            <li class="lvl1">
+                <a href="listas_desplegables.html">Listas desplegables</a>
+                <ul>
+                    <li>
+                        <a href="listas_desplegables.html#select_datalist">Select y Datalist</a>
+                    </li>
+                    <li>
+                        <a href="listas_desplegables.html#option_optgroup">Option y Optgroup</a>
+                    </li>
+                </ul>
+            </li>
+            <li class="lvl1">
+                <a href="botones.html">Botones</a>
+            </li>
+            <li class="lvl1">
+                <a href="output.html">Output</a>
+            </li>
+        </ul>
+    </nav>
+
+    <main>
+        <section class="info">
+            <h2>Etiqueta Button</h2>
+            <p class="texto">Representa un elemento cliqueable de tipo botón que puede ser utilizado en formularios o en cualquier parte de la página que necesite un botón estándar y simple de aplicar.</p>
+            <section class="codigo">
+                <p>&lt<span class="etiqueta">button</span> <span class="atributos">name</span>="<span class="valores">suscribirse</span>"&gtSuscribete&lt/<span class="etiqueta">button</span>&gt</p>
+            </section>
+
+            
+
+            <h2>Button vs Input type="submit"</h2>
+            <p class="texto">Debemos tener en cuenta que un &ltbutton&gt podemos posicionarlo en cualquier HTML, tanto dentro como fuera de formularios y hacer que tengan diferentes usos. La forma correcta de hacer un botón de envío en un formulario realmente sería hacer un &ltinput&gt de tipo submit o un &ltbutton&gt de tipo submit.</p>
+            <section class="codigo">
+                <p>&lt<span class="etiqueta">button</span> <span class="atributos">type</span>="<span class="valores">submit</span>"&gtEnviar&lt/<span class="etiqueta">button</span>&gt</p>
+                <p>&lt<span class="etiqueta">input</span> <span class="atributos">type</span>="<span class="valores">submit</span>" <span class="atributos">value</span>="<span class="valores">Input</span>"/&gt</p>
+            </section>
+        </section>
+    </main>
+
+    <form action="" class="ejemplo">
+        <button type="submit">Button</button>
+        <input type="submit" value="Input"/>
+    </form>
+
+
+</body>
+</html>

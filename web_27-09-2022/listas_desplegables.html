@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="etiquetas.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Display:wght@100;200;300&display=swap" rel="stylesheet">
+
+    <title>Listas Desplegables</title>
+</head>
+<body>
+    <header>
+        <h1>Listas Desplegables</h1>
+    </header>
+    <nav>
+        <ul class="principal">
+            <li class="lvl1">
+                <a href="index.html">Creación de formularios</a>
+                <ul>
+                    <li>
+                        <a href="index.html#form">Form</a>
+                    </li>
+                    <li>
+                        <a href="index.html#fieldset_legend">Fieldset y Legend</a>
+                    </li>
+                </ul>
+            </li>
+            <li class="lvl1">
+                <a href="entrada_datos.html">Entradas de datos</a>
+                <ul>
+                    <li>
+                        <a href="entrada_datos.html#label_input">Label e Input</a>
+                    </li>
+                    <li>
+                        <a href="entrada_datos.html#textarea">Textarea</a>
+                    </li>
+                </ul>
+            </li>
+            <li class="lvl1">
+                <a href="listas_desplegables.html">Listas desplegables</a>
+                <ul>
+                    <li>
+                        <a href="listas_desplegables.html#select_datalist">Select y Datalist</a>
+                    </li>
+                    <li>
+                        <a href="listas_desplegables.html#option_optgroup">Option y Optgroup</a>
+                    </li>
+                </ul>
+            </li>
+            <li class="lvl1">
+                <a href="botones.html">Botones</a>
+            </li>
+            <li class="lvl1">
+                <a href="output.html">Output</a>
+            </li>
+        </ul>
+    </nav>
+
+    <main>
+        <section class="info">
+            <h2 id="select_datalist">Etiquetas Select y Datalist</h2>
+            <p class="texto">Para crear inputs con una lista de varias opciones, se puede desarrollar de dos maneras diferentes:</p>
+            <ul>
+                <li>
+                    <p><span class="destacado">Etiqueta &ltselect&gt</span>: esta permite crear la lista, con las etiquetas &ltoption&gt:</p>
+                </li>
+                <br>
+                <section class="codigo">
+                    <p>&lt<span class="etiqueta">select</span> <span class="atributos">name</span>="<span class="valores">clases</span>"&gt</p>
+                    <br>
+                    <p class="indentado1">&lt<span class="etiqueta">option</span> <span class="atributos">name</span>="<span class="valores">DSW</span>"&gtDesarrollo web en entorno servidor &lt/<span class="etiqueta">span</span> &gt</p>
+                    <p class="indentado1">&lt<span class="etiqueta">option</span> <span class="atributos">name</span>="<span class="valores">DOR</span>"&gtDiseño de interfaces web &lt/<span class="etiqueta">span</span> &gt</p>
+                    <p class="indentado1">&lt<span class="etiqueta">option</span> <span class="atributos">name</span>="<span class="valores">DPL</span>"&gtDespliegue de aplicaciones web &lt/<span class="etiqueta">span</span> &gt</p>
+                    <p class="indentado1">&lt<span class="etiqueta">option</span> <span class="atributos">name</span>="<span class="valores">DEW</span>"&gtDesarrollo web en entorno cliente &lt/<span class="etiqueta">span</span> &gt</p>
+                    <br>
+                    <p>&lt/<span class="etiqueta">select</span>&gt</p>
+                </section>
+
+                <form action="" class="ejemplo">
+                    <select name="clases" id="">
+                        <option value="DSW">Desarrollo web en entorno servidor</option>
+                        <option value="DOR">Diseño de interfaces web</option>
+                        <option value="DPL">Despliegue de aplicaciones web</option>
+                        <option value="DEW">Desarrollo web en entorno cliente</option>
+                    </select>
+                </form>
+
+                <li>
+                    <p><span class="destacado">Etiqueta &ltinput list = "" &gt</span>: de este modo, se puede utilizar una etiqueta &ltdatalist&gt con etiquetas &ltoption&gt dentro del input. De este modo, el usuario puede escribir dentro del input, y filtrar los resultados de la lista (mejor opción):</p>
+                </li>
+                <br>
+                <section class="codigo">
+                    <p>&lt<span class="etiqueta">input</span> <span class="atributos">list</span>="<span class="valores">clases</span>"&gt</p>
+                    <p>&lt<span class="etiqueta">datalist</span> <span class="atributos">id</span>="<span class="valores">clases</span>"&gt</p>
+                    <br>
+                    <p class="indentado1">&lt<span class="etiqueta">option</span> <span class="atributos">name</span>="<span class="valores">DSW</span>"&gt:Desarrollo web en entorno servidor &lt/<span class="etiqueta">span</span> &gt</p>
+                    <p class="indentado1">&lt<span class="etiqueta">option</span> <span class="atributos">name</span>="<span class="valores">DOR</span>"&gt:Diseño de interfaces web &lt/<span class="etiqueta">span</span> &gt</p>
+                    <p class="indentado1">&lt<span class="etiqueta">option</span> <span class="atributos">name</span>="<span class="valores">DPL</span>"&gt:Despliegue de aplicaciones web &lt/<span class="etiqueta">span</span> &gt</p>
+                    <p class="indentado1">&lt<span class="etiqueta">option</span> <span class="atributos">name</span>="<span class="valores">DEW</span>"&gt:Desarrollo web en entorno cliente &lt/<span class="etiqueta">span</span> &gt</p>
+                    <br>
+                    <p>&lt/<span class="etiqueta">datalist</span>&gt</p>
+                </section>
+
+                <form action="" class="ejemplo">
+                    <input class="datalist" list="clases">
+                    <datalist id="clases">
+                        <option value="DSW">Desarrollo web en entorno servidor</option>
+                        <option value="DOR">Diseño de interfaces web</option>
+                        <option value="DPL">Despliegue de aplicaciones web</option>
+                        <option value="DEW">Desarrollo web en entorno cliente</option>
+                    </datalist>
+                </form>
+            </ul>
+
+            <h2 id="option_optgroup">Etiquetas Option y Optgroup</h2>
+            <p class="texto">&ltoption&gt es usado para insertar opciones en una lista de opciones (&ltselect&gt). Estos pueden ser agrupados en diferentes grupos con &ltoptgroup&gt</p>
+            <section class="codigo">
+                <p>&lt<span class="etiqueta">select</span> <span class="atributos">name</span>="<span class="valores">clases</span>"&gt</p>
+                <br>
+                <p class="indentado1">&lt<span class="etiqueta">optgroup</span> <span class="atributos">label</span>="<span class="valores">Primero de DAW</span>"&gt</p>
+                <p class="indentado2">&lt<span class="etiqueta">option</span> <span class="atributos">name</span>="<span class="valores">PRO</span>"&gtProgramación &lt/<span class="etiqueta">span</span> &gt</p>
+                <p class="indentado2">&lt<span class="etiqueta">option</span> <span class="atributos">name</span>="<span class="valores">LND</span>"&gtLenguaje de marcas &lt/<span class="etiqueta">span</span> &gt</p>
+                <p class="indentado2">&lt<span class="etiqueta">option</span> <span class="atributos">name</span>="<span class="valores">BAE</span>"&gtBase de datos &lt/<span class="etiqueta">span</span> &gt</p>
+                <p class="indentado2">&lt<span class="etiqueta">option</span> <span class="atributos">name</span>="<span class="valores">ETS</span>"&gtEntornos de desarrollo &lt/<span class="etiqueta">span</span> &gt</p>
+                <p class="indentado2">&lt<span class="etiqueta">option</span> <span class="atributos">name</span>="<span class="valores">SSF</span>"&gtSistemas informáticos &lt/<span class="etiqueta">span</span> &gt</p>
+                <p class="indentado1">&lt/<span class="etiqueta">optgroup</span>&gt</p>
+                <br>
+                <p class="indentado1">&lt<span class="etiqueta">optgroup</span> <span class="atributos">label</span>="<span class="valores">Segundo de DAW</span>"&gt</p>                
+                <p class="indentado2">&lt<span class="etiqueta">option</span> <span class="atributos">name</span>="<span class="valores">DSW</span>"&gtDesarrollo web en entorno servidor &lt/<span class="etiqueta">span</span> &gt</p>
+                <p class="indentado2">&lt<span class="etiqueta">option</span> <span class="atributos">name</span>="<span class="valores">DOR</span>"&gtDiseño de interfaces web &lt/<span class="etiqueta">span</span> &gt</p>
+                <p class="indentado2">&lt<span class="etiqueta">option</span> <span class="atributos">name</span>="<span class="valores">DPL</span>"&gtDespliegue de aplicaciones web &lt/<span class="etiqueta">span</span> &gt</p>
+                <p class="indentado2">&lt<span class="etiqueta">option</span> <span class="atributos">name</span>="<span class="valores">DEW</span>"&gtDesarrollo web en entorno cliente &lt/<span class="etiqueta">span</span> &gt</p>
+                <p class="indentado1">&lt/<span class="etiqueta">optgroup</span>&gt</p>
+                <br>
+                <p>&lt/<span class="etiqueta">select</span>&gt</p>
+            </section>
+
+            <form action="" class="ejemplo">
+                <select name="clases">
+                    <optgroup label="Primero de DAW">
+                        <option value="PRO">Programación</option>
+                        <option value="LND">Lenguaje de marcas</option>
+                        <option value="BAE">Base de datos</option>
+                        <option value="ETS">Entornos de desarrollo</option>
+                        <option value="SSF">Sistemas informáticos</option>
+                    </optgroup>
+                    <optgroup label="Segundo de DAW">
+                        <option value="DSW">Desarrollo web en entorno servidor</option>
+                        <option value="DOR">Diseño de interfaces web</option>
+                        <option value="DPL">Despliegue de aplicaciones web</option>
+                        <option value="DEW">Desarrollo web en entorno cliente</option>
+                    </optgroup>
+                </select>
+            </form>
+        </section>
+    </main>
+
+</body>
+</html>
