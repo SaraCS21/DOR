@@ -1,0 +1,79 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    width: 100vw;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    font-size: 1.4em;
+}
+
+button{
+    width: 50%;
+    height: 50px;
+
+    font-size: 1em;
+    border: 1px solid gray;
+    border-radius: 10px;
+}
+
+section{
+    width: 20%;
+    height: 20%;
+    margin: 1%;
+
+    display: flex;
+    flex-direction: column;
+
+    border: 1px solid grey;
+    border-radius: 10px;
+}
+
+section p{
+    width: 100%;
+    margin-top: 10%;
+
+    text-align: center;
+}
+
+.caja{
+    width: 3rem;
+    height: 3rem;
+    margin-top: 6%;
+    
+    border-radius: 10px;
+    border: 1px solid black;
+    background-image: url(cthulhu.svg);
+    background-size:contain;
+}
+
+.linear{
+    transition: 1s linear;
+}
+
+.ease-in{
+    transition: 1s ease-in;
+}
+
+.ease-out{
+    transition: 1s ease-out;
+}
+
+.ease{
+    transition: 1s ease;
+}
+
+.ease-in-out{
+    transition: 1s ease-in-out;
+}
+
+.estado_final div{
+    transform: translateX(20.4rem);
+}
