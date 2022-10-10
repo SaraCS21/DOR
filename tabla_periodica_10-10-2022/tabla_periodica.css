@@ -1,0 +1,90 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    width: 80%;
+    margin: 2%;
+    display: grid;
+    grid-template-rows: repeat(11, 10vh);
+    /* grid-template-columns: repeat(18, 8%); */
+}
+
+.fila{
+    width: 100%;
+    height: 100%;
+
+    display: flex;
+    justify-content: space-between;
+
+    /* display: grid;
+    grid-template-columns: repeat(18, 8%);
+    grid-template-columns: 100%; */
+}
+
+.derecha, .izquierda{
+    width: 50%;
+    display: flex;
+}
+
+.derecha{
+    justify-content: flex-end;
+}
+
+.caja{
+    width: 5.3vw;
+    height: 100%;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.num{
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+}
+
+.nombres{
+    font-size: 0.7rem;
+}
+
+.nometales{
+    background-color: aqua;
+}
+
+.gasesnobles{
+    background-color: aquamarine;
+}
+
+.metalesalcalicos{
+    background-color: bisque;
+}
+
+.alcalinoterreos{
+    background-color: cadetblue;
+}
+
+.metaloides{
+    background-color: burlywood;
+}
+
+.halogenos{
+    background-color: coral;
+}
+
+.metales{
+    background-color: cornflowerblue;
+}
+
+.metalesdetransicion{
+    background-color: darkgrey;
+}
+
+.lantanidos, .actinidos{
+    background-color: darkseagreen;
+}
