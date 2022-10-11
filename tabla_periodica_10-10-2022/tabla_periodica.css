@@ -7,21 +7,50 @@
 body{
     width: 80%;
     margin: 2%;
+
     display: grid;
     grid-template-rows: repeat(11, 10vh);
-    /* grid-template-columns: repeat(18, 8%); */
+
+    color: white;
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif
 }
 
-.fila{
+.leyenda{
+    width: 44vw;
+    height: 26vh;
+
+    position: absolute;
+    left: 17vw;
+
+    display: flex;
+    color: black;
+
+    background-color: antiquewhite;
+}
+
+.colores{
+    width: 100%;
+
+    display: flex;
+    background-color: aqua;
+}
+
+.color{
+    width: 1vw;
+    height: 2vh;
+    margin-right: 1.5%;
+}
+
+.fila, .fila2{
     width: 100%;
     height: 100%;
 
     display: flex;
     justify-content: space-between;
+}
 
-    /* display: grid;
-    grid-template-columns: repeat(18, 8%);
-    grid-template-columns: 100%; */
+.fila2{padding-left: 10.6vw;
+    width: 94.4%;
 }
 
 .derecha, .izquierda{
@@ -41,6 +70,8 @@ body{
     flex-direction: column;
     justify-content: space-evenly;
     align-items: center;
+
+    border: 5px solid white;
 }
 
 .num{
@@ -49,42 +80,63 @@ body{
     justify-content: space-around;
 }
 
-.nombres{
-    font-size: 0.7rem;
+.nombres, .num{
+    font-size: 0.75rem;
+    opacity: 0;
+    transition: 0.5s;
+}
+
+.caja:hover .nombres, .caja:hover .num{
+    opacity: 1;
+    transition: 0.5s;
+    cursor: pointer;
 }
 
 .nometales{
-    background-color: aqua;
+    background-color: rgb(255, 156, 58);
+    color: black;
 }
 
 .gasesnobles{
-    background-color: aquamarine;
+    background-color: rgb(5, 108, 74);
 }
 
 .metalesalcalicos{
-    background-color: bisque;
+    background-color: rgb(14, 9, 126);
 }
 
 .alcalinoterreos{
-    background-color: cadetblue;
+    background-color: rgb(245, 214, 92);
+    color: black;
 }
 
 .metaloides{
-    background-color: burlywood;
+    background-color: rgb(210, 33, 95);
 }
 
 .halogenos{
-    background-color: coral;
+    background-color: rgb(135, 161, 90);
+    color: black;
 }
 
 .metales{
-    background-color: cornflowerblue;
+    background-color: rgb(96, 37, 138);
 }
 
 .metalesdetransicion{
-    background-color: darkgrey;
+    background-color: rgb(30, 113, 201);
 }
 
 .lantanidos, .actinidos{
-    background-color: darkseagreen;
+    background-color: rgb(237, 218, 166);
+    color: black;
+}
+
+.lantanidos3{
+    background-color: rgb(177, 223, 177);
+    color: black;
+}
+
+.actinidos3{
+    background-color: rgb(66, 90, 66);
 }
