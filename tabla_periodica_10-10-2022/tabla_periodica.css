@@ -7,6 +7,7 @@
 body{
     width: 80%;
     margin: 2%;
+    margin-left: 1.5%;
 
     display: grid;
     grid-template-rows: repeat(11, 10vh);
@@ -15,30 +16,143 @@ body{
     font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif
 }
 
+.titulo{
+    width: 100%;
+
+    text-align: center;
+    color: black;
+
+    font-size: 4rem;
+    font-family: sans-serif;
+    letter-spacing: 0.5rem;
+    word-spacing: 2.5rem;
+}
+
 .leyenda{
     width: 44vw;
     height: 26vh;
 
     position: absolute;
-    left: 17vw;
+    left: 18vw;
+    top: 15vh;
 
     display: flex;
+    justify-content: flex-end;
     color: black;
-
-    background-color: antiquewhite;
 }
 
 .colores{
-    width: 100%;
+    width: 50%;
+    height: 80%;
+    margin-top: 4%;
 
     display: flex;
-    background-color: aqua;
+    flex-wrap: wrap;
+    flex-direction: column;
+    align-items: flex-end;
+    justify-content: center;
+}
+
+.item{
+    width: 50%;
+    height: 4vh;
+    display: flex;
 }
 
 .color{
     width: 1vw;
     height: 2vh;
-    margin-right: 1.5%;
+    margin-right: 5%;
+}
+
+.ejemplo{
+    width: 50%;
+    margin-right: 8%;
+    position: relative;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.caja_ejemplo{
+    width: 160px;
+    height: 160px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.caja_ejemplo .num, .caja_ejemplo .nombres{
+    font-size: 1.1rem;
+    opacity: 1;
+}
+
+.caja_ejemplo h1{
+    font-size: 3.5rem;
+}
+
+.num_atomico,
+.masa_atomica,
+.simbolo_quimico,
+.nombre{
+    width: 20%;
+    position: absolute;
+}
+
+.num_atomico{
+    top: 20%;
+    left: -3%;
+}
+
+.masa_atomica{
+    top: 20%;
+    left: 85%;
+}
+
+.simbolo_quimico{
+    top: 43%;
+    left: -3%;
+}
+
+.nombre{
+    top: 69%;
+    left: 85%;
+}
+
+.linea_num_atomico,
+.linea_masa_atomica,
+.linea_simbolo_quimico,
+.linea_nombre{
+    height: 2px;
+    position: absolute;
+    background-color: black;
+}
+
+.linea_num_atomico{
+    width: 18%;
+    top: 27.5%;
+    left: 14%;
+}
+
+.linea_masa_atomica{
+    width: 14%;
+    top: 27.5%;
+    left: 68%;
+}
+
+.linea_simbolo_quimico{
+    width: 28%;
+    top: 50.5%;
+    left: 14%;
+}
+
+.linea_nombre{
+    width: 17%;
+    top: 72.5%;
+    left: 65%;
 }
 
 .fila, .fila2{
@@ -49,7 +163,8 @@ body{
     justify-content: space-between;
 }
 
-.fila2{padding-left: 10.6vw;
+.fila2{
+    padding-left: 10.6vw;
     width: 94.4%;
 }
 
@@ -72,6 +187,7 @@ body{
     align-items: center;
 
     border: 5px solid white;
+    transition: 0.5s;
 }
 
 .num{
@@ -90,6 +206,11 @@ body{
     opacity: 1;
     transition: 0.5s;
     cursor: pointer;
+}
+
+.caja:hover{
+    transform: scale(120%);
+    transition: 0.5s;
 }
 
 .nometales{
@@ -125,11 +246,6 @@ body{
 
 .metalesdetransicion{
     background-color: rgb(30, 113, 201);
-}
-
-.lantanidos, .actinidos{
-    background-color: rgb(237, 218, 166);
-    color: black;
 }
 
 .lantanidos3{
