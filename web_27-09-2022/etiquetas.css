@@ -1,48 +1,120 @@
 /* Estilos generales */
 
+:root{
+    --color_amarillo_claro: #fff3d4;
+    --color_amarillo: #fce5aa;
+    --color_verde: #9dc0b5;
+
+    --codigo_etiqueta: rgb(223, 17, 86);
+    --codigo_atributo: rgb(14, 134, 195);
+    --codigo_valor: rgb(7, 175, 57);
+    --base_color: #efefef;
+    --fuente: 'Noto Sans Display', sans-serif;
+}
+
 *{
     margin: 0 auto;
     padding: 0;
     box-sizing: border-box;
+
+    font-family: var(--fuente);
+    font-size: 1.05rem;
 }
 
 header{
-    margin: 3%;
+    width: 100%;
+    height: 200px;
+
     display: flex;
-    justify-content: center;
+    align-items: center;
+
+    background-color: var(--color_verde);
 }
 
 header h1{
+    width: 100%;
+
     text-align: center;
+    font-size: 3.5rem;
 }
 
-main{
-    width: 80%;
-    font-size: 1.2rem;
+/* BARRA DE SCROLL */
+
+body::-webkit-scrollbar {
+    width: 12px;              
 }
+
+body::-webkit-scrollbar-track {
+    background: var(--color_verde);        
+}
+
+body::-webkit-scrollbar-thumb {
+    background-color: var(--color_amarillo);    
+    border-radius: 50px;       
+    border: 3px solid var(--color_verde); 
+}
+
+/* NAVEGADOR */
 
 nav{
-    padding: 2%;
-    width: 100%;
-    background-color: antiquewhite;
+    width: 80%;
+    height: 100px;
+
+    display: flex;
+    align-items: center;
+
+    position: relative;
+
+    background-color: var(--color_amarillo);
+    border-bottom-left-radius: 50px;
+    border-bottom-right-radius: 50px;
 }
 
 .principal{
-    width: 80%;
+    width: 90%;
+    height: 100%;
+
     display: flex;
 }
 
 a{
+    height: 100%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
     text-decoration: none;
     color: black;
+    transition: 0.55s;
 }
 
 li{
+    width: 16%;
+    height: 100%;
+    padding: 1%;
+    
     list-style: none;
 }
 
-.lvl1 > ul{
+li a:hover{
+    text-shadow: #79693f 0.1em 0.1em 0.2em;
+    transition: 0.5s;
+}
+
+.lvl1 ul{
+    width: 12.6%;
+
     display: none;
+    position: absolute; 
+    top: 100%;
+    
+    background-color: var(--color_amarillo);
+}
+
+.lvl1 ul li{
+    width: 100%;
+    height: 70px;
 }
 
 .lvl1:hover > ul{
@@ -52,7 +124,8 @@ li{
 /* Estilos páginas separadas */
 
 main{
-    width: 100%;
+    padding-top: 1%;
+    width: 80%;
 
     display: flex;
     justify-content: center;
@@ -65,6 +138,24 @@ main{
 .info h2{
     margin-top: 2%;
     text-align: center;
+
+    font-size: 1.7rem;
+}
+
+.info li{
+    width: 100%;
+    padding-left: 0%;
+    padding-bottom: 0%;
+
+    position: relative;
+    left: 4%;
+
+    list-style: disc;
+    color: var(--color_verde);
+}
+
+.info li p{
+    color: black;
 }
 
 .info .texto, .info h3{
@@ -89,18 +180,198 @@ main{
     margin-bottom: 2%;
     padding: 3%;
     padding-left: 6%;
-    background-color: rgb(228, 228, 228);
+
+    background-color: rgb(244, 244, 244);
     border-radius: 10px;
 }
 
 .info .etiqueta{
-    color: rgb(223, 17, 86);
+    color: var(--codigo_etiqueta);
 }
 
 .info .atributos{
-    color: rgb(14, 134, 195);
+    color: var(--codigo_atributo);
+}
+
+.info .valores{
+    color: var(--codigo_valor);
 }
 
 .info .destacado{
     font-weight: bold;
+}
+
+.ejemplo, .ejemplo_input{
+    padding: 3%;
+    width: 60%;
+
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.ejemplo fieldset{
+    width: 40%;
+    margin-bottom: 3%;
+
+    display: flex;
+    flex-direction: column;
+
+    font-size: 1.2em;
+    border-radius: 20px;
+    background-color: var(--color_amarillo_claro);
+}
+
+.ejemplo fieldset legend{
+    font-size: 1.3rem;
+}
+
+.ejemplo fieldset label{
+    padding: 3%;
+    width: 70%;
+
+    display: flex;
+    align-items: center;
+}
+
+.ejemplo fieldset label span{
+    width: 50%;
+    text-align: left;
+}
+
+.ejemplo fieldset label input{
+    padding: 2%;
+    width: 40%;
+    height: 26px;
+}
+
+.ejemplo_input{
+    width: 60%;
+    flex-wrap: wrap;
+}
+
+.ejemplo_input label, .ejemplo_input section{
+    width: 35%;
+
+    display: flex;
+    flex-direction: column;
+}
+
+.ejemplo_input label, .ejemplo_input span{
+    margin-bottom: 3%;
+}
+
+.ejemplo_input input{
+    width: 80%;
+    padding: 3%;
+
+    background-color: var(--color_amarillo_claro);
+    border: none;
+    border-radius: 0.5rem;
+    outline:none;
+}
+
+.ejemplo_input input::placeholder, .ejemplo textarea::placeholder{
+    color: black;
+    opacity: 0.7;
+}
+
+.ejemplo_input .boton{
+    width: 100%;
+    height: 8%;
+}
+
+.ejemplo_input input[type=submit]{
+    margin-top: 3%;
+    width: 18%;
+
+    border: none;
+    border-radius: 1rem;
+    box-shadow: 0 0.4rem var(--color_amarillo_claro);
+    cursor: pointer;
+
+    background: var(--color_verde);
+    color: white;
+}
+
+.ejemplo_input input[type=submit]:active,
+.ejemplo button:active,
+.ejemplo input[type=submit]:active,
+.output_ejemplo input[type=button]:active{
+    box-shadow: 0 0.2rem #dfd9d9;
+    transform: translateY(0.2rem);
+}
+
+.ejemplo textarea{
+    padding: 1.5%;
+    resize: none;
+
+    outline: none;
+    border: none;
+    border-radius: 20px;
+    background-color: var(--color_amarillo_claro);
+}
+
+.ejemplo select,
+.ejemplo .datalist{
+    padding: 1.5%;
+    
+    outline: none;
+    border: none;
+    border-radius: 10px;
+    background-color: var(--color_amarillo_claro);
+}
+
+.ejemplo button,
+.ejemplo input[type=submit],
+.output_ejemplo input[type=button]{
+    width: 15%;
+    height: 40px;
+
+    border: none;
+    border-radius: 1rem;
+    box-shadow: 0 0.4rem var(--color_amarillo_claro);
+    cursor: pointer;
+
+    background: var(--color_verde);
+    color: white;
+}
+
+.output_ejemplo{
+    width: 100%;
+    margin-bottom: 3%;
+
+    display: flex;
+    flex-direction: column;
+}
+
+.output_ejemplo p{
+    margin-top: 2%;
+}
+
+.output_ejemplo input[type=button]{
+    width: 200%;
+}
+
+.output_ejemplo .boton{
+    width: 6%;
+    display: flex;
+}
+
+.output_ejemplo .valor{
+    width: 20%;
+    display: flex;
+    justify-content: center;
+}
+
+.output_ejemplo .valor p{
+    width: 50%;
+}
+
+.output_ejemplo .valor input{
+    width: 35%;
+    padding: 2%;
+    margin: 5%;
+
+    border: 1px solid var(--color_verde);
+    border-radius: 10px;
 }
