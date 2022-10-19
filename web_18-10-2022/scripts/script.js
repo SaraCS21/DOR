@@ -87,3 +87,37 @@ function insertAlertDelegation(e, elementModal, modal){
 
 posAlertLogin.addEventListener("click", e => (insertAlertDelegation(e, posAlertLogin, "loginModal")));
 posAlertRegister.addEventListener("click", e => (insertAlertDelegation(e, posAlertRegister, "registroModal")));
+
+const btnLogin = document.querySelector("#loginModal .btn-success");
+
+function errors(arrayModal, btnLogin){
+    fail = 0;
+
+    arrayModal.forEach(modal => {
+        const p = document.querySelector(`#${modal.id} p`);
+        const input = document.querySelector(`#${modal.id} input`);
+
+        if ((/^\w+([\.-]?\w+)*@(?:|hotmail|outlook|yahoo|live|gmail)\.(?:|com|es)+$/.test(input.value)) && input.id === "email"){
+            modal.classList.add("is-valid");
+            p.style.display = "none";
+
+        } else if (input.id === "contraseña" && input.value.length > 10){
+            modal.classList.add("is-valid");
+            p.style.display = "none";
+
+        } else {
+            modal.classList.add("is-invalid");
+            p.style.display = "block";
+            fail++;
+        }
+    })
+
+    if (fail === 0){
+        btnLogin.setAttribute("data-bs-dismiss", "modal");
+    }
+};
+
+const nodeLoginErrors = document.querySelectorAll("#loginModal .content");
+const loginErrors = [...nodeLoginErrors];
+
+btnLogin.addEventListener("click", () => errors(loginErrors, btnLogin))

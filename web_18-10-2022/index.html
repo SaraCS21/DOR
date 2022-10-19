@@ -69,22 +69,32 @@
                 <div class="modal-body">
                     <!-- Correo -->
                     <label for="form-label" class="mb-2">Correo</label>
-                    <div class="input-group mb-3">
-                        <span class="input-group-text" id="basic-addon1"><i class='bx bxs-user'></i></span>
-                        <input type="email" class="form-control" placeholder="correo registrado" aria-label="correo"
-                            aria-describedby="basic-addon1">
+                    <div class="content" id="email">
+                        <div class="input-group mb-3">
+                            <span class="input-group-text" id="basic-addon1"><i class='bx bxs-user'></i></span>
+                            <input id="email" type="email" class="form-control" placeholder="correo registrado" aria-label="correo"
+                                aria-describedby="basic-addon1">
+                        </div>
+                        <p class="invalid-feedback">
+                            Campo inválido
+                        </p>
                     </div>
 
                     <!-- Contraseña -->
                     <label for="form-label" class="mb-2">Password</label>
-                    <div class="input-group mb-4">
-                        <span class="input-group-text" id="basic-addon1"><i class='bx bxs-key'></i></span>
-                        <input type="password" class="form-control" placeholder="contraseña" aria-label="contraseña"
-                            aria-describedby="basic-addon1">
+                    <div class="content" id="contraseña">
+                        <div class="input-group mb-3">
+                            <span class="input-group-text" id="basic-addon1"><i class='bx bxs-key'></i></span>
+                            <input id="contraseña" type="password" class="form-control" placeholder="contraseña" aria-label="contraseña"
+                                aria-describedby="basic-addon1">
+                        </div>
+                        <p class="invalid-feedback">
+                            Campo inválido
+                        </p>
                     </div>
 
                     <!-- Botones -->
-                    <button class="btn btn-success" type="button" data-bs-dismiss="modal">Login</button>
+                    <button class="btn btn-success" type="button">Login</button>
                     <button class="btn btn-secondary" type="button" data-bs-dismiss="modal">Close</button>
 
                     <hr>
