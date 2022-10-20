@@ -1,0 +1,109 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    max-width: 100vw;
+    max-height: 100vh;
+
+
+}
+
+main{
+    width: 50vw;
+    height: auto;
+    margin: auto;
+    padding: 1%;
+    
+    background-color: rgb(32, 32, 32);
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+main section{
+    width: 100%;
+
+    display: flex;
+
+    color: white;
+}
+
+/* RESULTADO */
+
+#result{
+    padding: 5%;
+
+    flex-direction: column;
+    align-items: flex-end;
+}
+
+#result p{
+    font-size: 1.5rem;
+    color: rgb(222, 222, 222);
+}
+
+#result h1{
+    font-size: 5rem;
+}
+
+#operation{
+    height: 3.5vh;
+}
+
+#num{
+    height: 9vh;
+}
+
+/* FILAS */
+
+.row{
+    width: 100%;
+    height: 100px;
+
+    display: flex;
+    justify-content: space-around;
+}
+
+.first{
+    height: 70px;
+}
+
+.row div{
+    width: 100%;
+    height: 100%;
+    padding: 1%;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+button{
+    width: 100%;
+    height: 100%;
+
+    background-color: rgb(50, 50, 50);
+    border-radius: 10px;
+    color: white;
+    border: none;
+    
+    font-size: 1.7rem;
+}
+
+.grey{
+    background-color: rgb(59, 59, 59);
+}
+
+.blue{
+    background-color: rgb(76, 194, 255);
+}
+
+.first button{
+    font-size: 1rem;
+    background-color: rgb(32, 32, 32);
+}
+
+button:hover{
+    filter: brightness(75%);
+}

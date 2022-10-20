@@ -92,7 +92,9 @@ const btnLogin = document.querySelector("#loginModal .btn-success");
 const btnRegister = document.querySelector("#registroModal .btn-success");
 
 function errors(arrayModal, btn, tipoModal){
-    fail = 0;
+    let fail = 0;
+    let password = "";
+    let nombre = "";
 
     arrayModal.forEach(modal => {
         const p_invalid = document.querySelector(`#${tipoModal} #${modal.id} .invalid-feedback`);
@@ -111,16 +113,19 @@ function errors(arrayModal, btn, tipoModal){
             p_invalid.style.display = "none";
             p_valid.style.display = "block";
 
-            let password = input.value;
+            password = input.value;
 
         // Validación nombre y apellidos
-        } else if (input.id === "nombre" && input.id === "apellido" && input.value.length > 3){
+        } else if (input.id === "nombre") {
+            nombre = input.value;
+        } else if (input.id === "apellido" && (input.value.length > 3 || nombre.length > 3)){
+            console.log("hola")
             modal.classList.add("is-valid");
             p_invalid.style.display = "none";
             p_valid.style.display = "block";
 
         // Validación Confirmar Contraseña
-        } else if (input.id === "confirmarContraseña" && input.value === password) {
+        } else if (input.id === "confirmarContraseña" && input.value === password && input.value !== "") {
             modal.classList.add("is-valid");
             p_invalid.style.display = "none";
             p_valid.style.display = "block";
