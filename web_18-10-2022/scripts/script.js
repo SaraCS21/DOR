@@ -89,35 +89,60 @@ posAlertLogin.addEventListener("click", e => (insertAlertDelegation(e, posAlertL
 posAlertRegister.addEventListener("click", e => (insertAlertDelegation(e, posAlertRegister, "registroModal")));
 
 const btnLogin = document.querySelector("#loginModal .btn-success");
+const btnRegister = document.querySelector("#registroModal .btn-success");
 
-function errors(arrayModal, btnLogin){
+function errors(arrayModal, btn, tipoModal){
     fail = 0;
 
     arrayModal.forEach(modal => {
-        const p = document.querySelector(`#${modal.id} p`);
-        const input = document.querySelector(`#${modal.id} input`);
+        const p_invalid = document.querySelector(`#${tipoModal} #${modal.id} .invalid-feedback`);
+        const p_valid = document.querySelector(`#${tipoModal} #${modal.id} .valid-feedback`);
+        const input = document.querySelector(`#${tipoModal} #${modal.id} input`);
 
+        // Validación Correo
         if ((/^\w+([\.-]?\w+)*@(?:|hotmail|outlook|yahoo|live|gmail)\.(?:|com|es)+$/.test(input.value)) && input.id === "email"){
             modal.classList.add("is-valid");
-            p.style.display = "none";
+            p_invalid.style.display = "none";
+            p_valid.style.display = "block";
 
-        } else if (input.id === "contraseña" && input.value.length > 10){
+        // Validación contraseña
+        } else if (input.id === "contraseña" && input.value.length > 8){
             modal.classList.add("is-valid");
-            p.style.display = "none";
+            p_invalid.style.display = "none";
+            p_valid.style.display = "block";
+
+            let password = input.value;
+
+        // Validación nombre y apellidos
+        } else if (input.id === "nombre" && input.id === "apellido" && input.value.length > 3){
+            modal.classList.add("is-valid");
+            p_invalid.style.display = "none";
+            p_valid.style.display = "block";
+
+        // Validación Confirmar Contraseña
+        } else if (input.id === "confirmarContraseña" && input.value === password) {
+            modal.classList.add("is-valid");
+            p_invalid.style.display = "none";
+            p_valid.style.display = "block";
 
         } else {
             modal.classList.add("is-invalid");
-            p.style.display = "block";
+            p_invalid.style.display = "block";
+            p_valid.style.display = "none";
             fail++;
         }
     })
 
     if (fail === 0){
-        btnLogin.setAttribute("data-bs-dismiss", "modal");
+        btn.setAttribute("data-bs-dismiss", "modal");
     }
 };
+
+const nodeRegisterErrors = document.querySelectorAll("#registroModal .content");
+const registerErrors = [...nodeRegisterErrors];
 
 const nodeLoginErrors = document.querySelectorAll("#loginModal .content");
 const loginErrors = [...nodeLoginErrors];
 
-btnLogin.addEventListener("click", () => errors(loginErrors, btnLogin))
+btnLogin.addEventListener("click", () => errors(loginErrors, btnLogin, "loginModal"))
+btnRegister.addEventListener("click", () => errors(registerErrors, btnRegister, "registroModal"))

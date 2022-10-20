@@ -76,7 +76,10 @@
                                 aria-describedby="basic-addon1">
                         </div>
                         <p class="invalid-feedback">
-                            Campo inválido
+                            Campo inválido, correo mal introducido
+                        </p>
+                        <p class="valid-feedback">
+                            Campo válido
                         </p>
                     </div>
 
@@ -89,7 +92,10 @@
                                 aria-describedby="basic-addon1">
                         </div>
                         <p class="invalid-feedback">
-                            Campo inválido
+                            Campo inválido: la contraseña debe tener al menos 8 caracteres
+                        </p>
+                        <p class="valid-feedback">
+                            Campo válido
                         </p>
                     </div>
 
@@ -118,36 +124,68 @@
                 <div class="modal-body">
                     <form class="container">
                         <!-- Inputs -->
-                        <div class="mb-3 row">
-                            <input type="text" class="form-control col" id="InputNombre" placeholder="Nombre o nombres" aria-label="nombre">
-                            <input type="text" class="form-control col ms-3" id="InputApellido" placeholder="Apellidos" aria-label="apellidos">
+                        <div class="content" id="nombreApellido">
+                            <div class="mb-3 row">
+                                <input type="text" class="form-control col" id="nombre" placeholder="Nombre o nombres" aria-label="nombre">
+                                <input type="text" class="form-control col ms-3" id="apellido" placeholder="Apellidos" aria-label="apellidos">
+                            </div>
+                            <p class="invalid-feedback">
+                                Campo inválido: el nombre y el apellido deben tener al menos 3 caracteres
+                            </p>
+                            <p class="valid-feedback">
+                                Campo válido
+                            </p>
+                        </div>
+                        <div class="content" id="email">
+                            <div class="row">
+                                <input type="email" class="form-control mb-3 col" id="email" placeholder="Tu correo" aria-label="correo">
+                            </div>
+                            <p class="invalid-feedback">
+                                Campo inválido, correo mal introducido
+                            </p>
+                            <p class="valid-feedback">
+                                Campo válido
+                            </p>
+                        </div>
+                        <div class="content" id="contraseña">
+                            <div class="row">
+                                <input type="password" class="form-control mb-3 col" id="contraseña"
+                                placeholder="Contraseña" aria-label="contraseña">
+                            </div>
+                            <p class="invalid-feedback">
+                                Campo inválido: la contraseña debe tener al menos 8 caracteres
+                            </p>
+                            <p class="valid-feedback">
+                                Campo válido
+                            </p>
+                        </div>
+                        <div class="content" id="confirmarContraseña">
+                            <div class="row">
+                                <input type="password" class="form-control mb-3 col" id="confirmarContraseña"
+                                placeholder="Confirmar contraseña" aria-label="confirmar contraseña">
+                            </div>
+                            <p class="invalid-feedback">
+                                Campo inválido: las contraseñas no coinciden
+                            </p>
+                            <p class="valid-feedback">
+                                Campo válido
+                            </p>
                         </div>
                         <div class="row">
-                            <input type="email" class="form-control mb-3 col" id="InputCorreo" placeholder="Tu correo" aria-label="correo">
-                        </div>
-                        <div class="row">
-                            <input type="password" class="form-control mb-3 col" id="InputContraseña1"
-                            placeholder="Contraseña" aria-label="contraseña">
-                        </div>
-                        <div class="row">
-                            <input type="password" class="form-control mb-3 col" id="InputContraseña2"
-                            placeholder="Confirmar contraseña" aria-label="confirmar contraseña">
-                        </div>
-                        <div class="row">
-                            <input type="date" class="form-control mb-3 col" id="InputFecha" aria-label="fecha">
+                            <input type="date" class="form-control mb-3 col" id="fecha" aria-label="fecha" required>
                         </div>
 
                         <!-- Radio buttons-->
                         <div class="row">
                             <div class="form-control mb-3 col">
                                 <div class="form-check">
-                                    <input class="form-check-input" type="radio" name="flexRadioDefault" id="RadioMujer" aria-label="sexo mujer">
+                                    <input class="form-check-input" type="radio" name="flexRadioDefault" id="RadioMujer" aria-label="sexo mujer" required>
                                     <label class="form-check-label" for="RadioMujer">
                                         Mujer
                                     </label>
                                 </div>
                                 <div class="form-check">
-                                    <input class="form-check-input" type="radio" name="flexRadioDefault" id="RadioHombre" aria-label="sexo hombre">
+                                    <input class="form-check-input" type="radio" name="flexRadioDefault" id="RadioHombre" aria-label="sexo hombre" required>
                                     <label class="form-check-label" for="RadioHombre">
                                         Hombre
                                     </label>
@@ -156,12 +194,12 @@
                         </div>
 
                         <div class="row">
-                            <input type="url" class="form-control mb-3 col" id="InputFecha" placeholder="Url de imagen de perfil" aria-label="url">
+                            <input type="url" class="form-control mb-3 col" id="url" placeholder="Url de imagen de perfil" aria-label="url" required>
                         </div>
                     </form>
 
                     <!-- Botones -->
-                    <button class="btn btn-success" type="button" data-bs-dismiss="modal">Registrarse</button>
+                    <button class="btn btn-success" type="submit">Registrarse</button>
                     <button class="btn btn-secondary" type="button" data-bs-dismiss="modal">Close</button>
                 </div>
             </div>
