@@ -121,7 +121,7 @@ clear_last_operating.addEventListener("click", e => {
 });
 
 clear_last_num.addEventListener("click", e => {
-    result.innerHTML = result.innerHTML.slice(0, -1);
+    result.innerHTML = result.textContent.slice(0, -1);
 });
 
 equal.addEventListener("click", e => {
