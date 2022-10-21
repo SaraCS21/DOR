@@ -1,52 +1,104 @@
 class Calculator{
     memory;
 
-    constructor(){
-        this.memory = 0;
+    constructor(memory){
+        this.memory = memory;
+    }
+
+    set memory(new_memory){
+        this.memory = new_memory;
     };
 
-    suma(num) {
-        return this.memory + num;
+    get memory(){
+        return this.memory;
     }
 
-    resta(num) {
-        return this.memory - num;
+    sum(num1, num2) {
+        let result = (num1 + num2).toFixed(2);
+        result = `${result}`;
+
+        if (result.includes(".00")){
+            result = Math.round(result);
+        }
+
+        return result;
     }
 
-    multiplicacion(num){
-        return this.memory * num;
+    rest(num1, num2) {
+        let result = (num1 - num2).toFixed(2);
+        result = `${result}`;
+
+        if (result.includes(".00")){
+            result = Math.round(result);
+        }
+
+        return result;
     }
 
-    division(num){
-        return this.memory / num;
+    multiplication(num1, num2){
+        let result = (num1 * num2).toFixed(2);
+        result = `${result}`;
+
+        if (result.includes(".00")){
+            result = Math.round(result);
+        }
+        return result;
     }
 
-    raiz(num){
-        return Math.sqrt(num);
+    division(num1, num2){
+        let result = (num1 / num2).toFixed(2);
+        result = `${result}`;
+
+        if (result.includes(".00")){
+            result = Math.round(result);
+        }
+        return result;
     }
 
-    elevado(num){
-        return num ** 2;
+    square_root(num){
+        let result = (Math.sqrt(num)).toFixed(2);
+        result = `${result}`;
+
+        if (result.includes(".00")){
+            result = Math.round(result);
+        }
+        return result;
     }
 
-    inversa(num){
-        return 1 / num;
+    elevated(num){
+        let result = (num ** 2).toFixed(2);
+        result = `${result}`;
+
+        if (result.includes(".00")){
+            result = Math.round(result);
+        }
+        return result;
     }
 
-    cambio_signo(){
-        return -this.memory;
+    reverse(num){
+        let result = (1 / num).toFixed(2);
+        result = `${result}`;
+
+        if (result.includes(".00")){
+            result = Math.round(result);
+        }
+        return result;
     }
 
-    resto(num){
-        return this.memory % num;
+    change_sign(num){
+        return -num;
     }
 
-    borrar_ultimo(){
-        return this.memory.slice(0, -1);
-    }
+    percentage(num1){
+        let result = (num1 / 100).toFixed(2);
+        result = `${result}`;
 
-    reset(){
-        return "";
+        if (result.includes(".00")){
+            result = Math.round(result);
+        }
+        return result;
     }
 
 }
+
+export default Calculator;
