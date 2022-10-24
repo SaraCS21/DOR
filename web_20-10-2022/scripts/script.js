@@ -1,9 +1,10 @@
 import Calculator from "./calculator.js";
 
-const body = document.querySelector("body");
+const memorys = document.querySelector("#memorys");
+const close = document.querySelector("#memorys .close");
 
 const result = document.querySelector("#num");
-result.innerHTML = "";
+result.innerHTML = 0;
 
 const operation = document.querySelector("#operation");
 operation.innerHTML = "";
@@ -48,7 +49,11 @@ function insertNum(numArray){
             let element = e.target;
 
             if (element.value !== undefined){
-                result.innerHTML += element.value;
+                if (result.textContent === "0"){
+                    result.innerHTML = element.value;
+                } else {
+                    result.innerHTML += element.value;
+                }
             }
         });
     });
@@ -63,44 +68,62 @@ coma.addEventListener("click", e => {
 
 // Operaciones básicas
 sum.addEventListener("click", e => {
-    operation.innerHTML = result.textContent + " + ";
-    result.innerHTML = "";
+    if (result.textContent !== ""){
+        operation.innerHTML = result.textContent + " + ";
+        result.innerHTML = "";
+    } 
 });
 
 rest.addEventListener("click", e => {
-    operation.innerHTML = result.textContent + " - ";
-    result.innerHTML = "";
+    if (result.textContent !== "0"){
+        operation.innerHTML = result.textContent + " - ";
+        result.innerHTML = "";
+    } else {
+        result.innerHTML = "-";
+    }
 });
 
 multiplication.addEventListener("click", e => {
-    operation.innerHTML = result.textContent + " * ";
-    result.innerHTML = "";
+    if (result.textContent !== ""){
+        operation.innerHTML = result.textContent + " * ";
+        result.innerHTML = "";
+    } 
 });
 
 division.addEventListener("click", e => {
-    operation.innerHTML = result.textContent + " / ";
-    result.innerHTML = "";
+    if (result.textContent !== ""){
+        operation.innerHTML = result.textContent + " / ";
+        result.innerHTML = "";
+    } 
 });
 
 // Operaciones complejas
 square_root.addEventListener("click", e => {
-    operation.innerHTML = `√( ${result.textContent} )`;
-    result.innerHTML = calculator.square_root(result.textContent);
+    if (result.textContent !== "0"){
+        operation.innerHTML = `√( ${result.textContent} )`;
+        result.innerHTML = calculator.square_root(result.textContent);
+    } 
 });
 
 elevated.addEventListener("click", e => {
-    operation.innerHTML = `sqrt( ${result.textContent} )`;
-    result.innerHTML = calculator.elevated(result.textContent);
+    if (result.textContent !== "0"){
+        operation.innerHTML = `sqrt( ${result.textContent} )`;
+        result.innerHTML = calculator.elevated(result.textContent);
+    }
 });
 
 reverse.addEventListener("click", e => {
-    operation.innerHTML = `1/( ${result.textContent} )`;
-    result.innerHTML = calculator.reverse(result.textContent);
+    if (result.textContent !== "0"){
+        operation.innerHTML = `1/( ${result.textContent} )`;
+        result.innerHTML = calculator.reverse(result.textContent);
+    }
 });
 
 percentage.addEventListener("click", e => {
-    operation.innerHTML = `( ${result.textContent} )/100`;
-    result.innerHTML = calculator.percentage(result.textContent);
+    if (result.textContent !== "0"){
+        operation.innerHTML = `( ${result.textContent} )/100`;
+        result.innerHTML = calculator.percentage(result.textContent);
+    }
 });
 
 // Otras operaciones
@@ -109,19 +132,23 @@ change_sign.addEventListener("click", e => {
 });
 
 clear.addEventListener("click", e => {
-    result.innerHTML = "";
+    result.innerHTML = 0;
     operation.innerHTML = "";
 });
 
 clear_last_operating.addEventListener("click", e => {
     let op = operation.textContent.split(" ");
-    result.innerHTML = "";
+    result.innerHTML = 0;
     op.pop();
     operation.innerHTML = op.join(" ") + " ";
 });
 
 clear_last_num.addEventListener("click", e => {
-    result.innerHTML = result.textContent.slice(0, -1);
+    if (result.innerHTML.length === 1){
+        result.innerHTML = 0;
+    } else {
+        result.innerHTML = result.textContent.slice(0, -1);
+    }
 });
 
 equal.addEventListener("click", e => {
@@ -162,7 +189,65 @@ equal.addEventListener("click", e => {
 
 // Funciones de la memoria
 new_memory.addEventListener("click", e => {
-    calculator.memory = result.textContent;
+    calculator.memory.push(result.textContent);
+
+    const div_buttons = document.createElement("div"); 
+    const button_mc = document.createElement("button"); 
+    button_mc.innerText = "MC";
+    button_mc.id = "delete_memory";
+    const button_mplus = document.createElement("button"); 
+    button_mplus.innerText = "M+";
+    button_mplus.id = "sum_memory";
+    const button_mminus = document.createElement("button"); 
+    button_mminus.innerText = "M-";
+    button_mminus.id = "rest_memory";
+
+    div_buttons.append(button_mc, button_mplus, button_mminus);
+    div_buttons.className = "buttons";
+
+    const div_num_memory = document.createElement("div"); 
+    div_num_memory.className = "num_memory";
+
+    const p_num_memory = document.createElement("p"); 
+    p_num_memory.innerText = calculator.memory.at(-1);
+    div_num_memory.appendChild(p_num_memory);
+
+    div_num_memory.appendChild(div_buttons);
+
+    memorys.append(div_num_memory);
+
+    button_mc.className = `${calculator.memory.length -1}`;
+    button_mplus.className = `${calculator.memory.length -1}`;
+    button_mminus.className = `${calculator.memory.length -1}`;
+
+    take_memory.disabled = false;
+    take_memory.classList.remove("disabled");
+    delete_memory.disabled = false;
+    delete_memory.classList.remove("disabled");
+    view_memory.disabled = false;
+    view_memory.classList.remove("disabled");
+
+    /* Eventos */
+
+    const new_delete_memory = document.querySelector(".num_memory #delete_memory");
+    const new_sum_memory = document.querySelector(".num_memory #sum_memory");
+    const new_rest_memory = document.querySelector(".num_memory #rest_memory");
+
+    new_delete_memory.addEventListener("click", e => {
+        let pos = new_delete_memory.className;
+        calculator.memory.splice(pos, pos+1);
+        console.log(calculator.memory)
+    });
+
+    new_sum_memory.addEventListener("click", e => {
+        let pos = new_sum_memory.className;
+        
+    });
+
+    new_rest_memory.addEventListener("click", e => {
+        let pos = new_rest_memory.className;
+        
+    });
 });
 
 take_memory.addEventListener("click", e => {
@@ -171,6 +256,13 @@ take_memory.addEventListener("click", e => {
 
 delete_memory.addEventListener("click", e => {
     calculator.memory = "";
+
+    take_memory.disabled = true;
+    take_memory.className = "disabled";
+    delete_memory.disabled = true;
+    delete_memory.className = "disabled";
+    view_memory.disabled = true;
+    view_memory.className = "disabled";
 });
 
 sum_memory.addEventListener("click", e => {
@@ -212,8 +304,9 @@ rest_memory.addEventListener("click", e => {
 });
 
 view_memory.addEventListener("click", e => {
-    const p = document.createElement("p");
-    p.innerHTML = calculator.memory;
-    body.appendChild(p);
+    memorys.style.display = "flex";
 });
 
+close.addEventListener("click", e => {
+    memorys.style.display = "none";
+});

@@ -115,15 +115,6 @@ function errors(arrayModal, btn, tipoModal){
 
             password = input.value;
 
-        // Validación nombre y apellidos
-        } else if (input.id === "nombre") {
-            nombre = input.value;
-        } else if (input.id === "apellido" && (input.value.length > 3 || nombre.length > 3)){
-            console.log("hola")
-            modal.classList.add("is-valid");
-            p_invalid.style.display = "none";
-            p_valid.style.display = "block";
-
         // Validación Confirmar Contraseña
         } else if (input.id === "confirmarContraseña" && input.value === password && input.value !== "") {
             modal.classList.add("is-valid");

@@ -1,13 +1,9 @@
 class Calculator{
     memory;
 
-    constructor(memory){
-        this.memory = memory;
+    constructor(){
+        this.memory = [];
     }
-
-    set memory(new_memory){
-        this.memory = new_memory;
-    };
 
     get memory(){
         return this.memory;
