@@ -4,7 +4,10 @@ import {
     clear, 
     clear_last_num, 
     clear_last_operating, 
-    convert
+    convert,
+    delete_in_memory, 
+    op_memory,
+    new_memory
 } from "./functions.js";
 
 import {
@@ -15,7 +18,9 @@ import {
     complex_operators_keys,
     operations,
     eliminations,
-    eliminations_keys
+    eliminations_keys,
+    memory_operators,
+    memory_operators_keys
 } from "./objects.js";
 
 const calculator = document.querySelector("main");
@@ -28,6 +33,7 @@ operation.innerHTML = "";
 
 const calculator_object = new Calculator(result.textContent);
 
+// Botones normales
 calculator.addEventListener("click", e => {
     let element = e.target;
 
@@ -86,6 +92,17 @@ calculator.addEventListener("click", e => {
     }
 })
 
+// Botones memoria
 calculator.addEventListener("click", e => {
+    let element = e.target;
 
+    if (memory_operators_keys.includes(element.id)){
+        memory_operators[element.id]()
+    }
 });
+
+// Operaciones de la memoria
+
+// calculator.addEventListener("click", e =>{
+
+// })

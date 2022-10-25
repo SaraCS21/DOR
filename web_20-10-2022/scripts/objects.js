@@ -4,7 +4,10 @@ import {
     clear, 
     clear_last_num, 
     clear_last_operating, 
-    convert
+    convert,
+    delete_in_memory, 
+    op_memory,
+    new_memory
 } from "./functions.js";
 
 const result = document.querySelector("#num");
@@ -47,6 +50,17 @@ const eliminations = {
 }
 const eliminations_keys = Object.keys(eliminations);
 
+const memory_operators = {
+    "take_memory": () => result.innerHTML = calculator_object.memory,
+    "delete_memory": () => delete_in_memory(),
+    "sum_memory": () => op_memory("sum"),
+    "rest_memory": () => op_memory("rest"),
+    "view_memory": () => memorys.style.display = "flex",
+    "close": () => memorys.style.display = "none",
+    "new_memory": () => new_memory()
+}
+const memory_operators_keys = Object.keys(memory_operators);
+
 export {
     simple_operator,
     simple_operators_keys,
@@ -55,5 +69,7 @@ export {
     complex_operators_keys,
     operations,
     eliminations,
-    eliminations_keys
+    eliminations_keys,
+    memory_operators,
+    memory_operators_keys
 };
