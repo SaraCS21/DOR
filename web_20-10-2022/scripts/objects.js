@@ -7,7 +7,8 @@ import {
     convert,
     delete_in_memory, 
     op_memory,
-    new_memory
+    new_memory,
+    take_in_memory
 } from "./functions.js";
 
 const result = document.querySelector("#num");
@@ -51,7 +52,7 @@ const eliminations = {
 const eliminations_keys = Object.keys(eliminations);
 
 const memory_operators = {
-    "take_memory": () => result.innerHTML = calculator_object.memory,
+    "take_memory": () => take_in_memory(),
     "delete_memory": () => delete_in_memory(),
     "sum_memory": () => op_memory("sum"),
     "rest_memory": () => op_memory("rest"),

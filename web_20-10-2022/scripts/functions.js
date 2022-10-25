@@ -40,8 +40,8 @@ function convert(num){
     }
 }
 
-function change_disable_condition(element){
-    if (element.disabled){
+function change_disable_condition(element, status){
+    if (status === "active"){
         element.disabled = false;
         element.classList.remove("disabled");
     } else {
@@ -53,9 +53,9 @@ function change_disable_condition(element){
 function delete_in_memory(){
     calculator_object.memory = [];
 
-    change_disable_condition(take_memory);
-    change_disable_condition(delete_memory);
-    change_disable_condition(view_memory);
+    change_disable_condition(take_memory, "inactive");
+    change_disable_condition(delete_memory, "inactive");
+    change_disable_condition(view_memory, "inactive");
 }
 
 function op_memory(operation){
@@ -65,11 +65,18 @@ function op_memory(operation){
     let num1 = convert(num);
     let num2 = convert(num_memory);
 
+    console.log(num1)
+    console.log(num2)
+
     if (operation === "sum"){
-        calculator_object.memory = calculator_object.sum(num1, num2);
+        calculator_object.memory = calculator_object.sum(num2, num1);
     } else {
-        calculator_object.memory = calculator_object.rest(num1, num2);
+        calculator_object.memory = calculator_object.rest(num2, num1);
     }
+}
+
+function take_in_memory(){
+    result.innerHTML = calculator_object.memory
 }
 
 function new_memory(){
@@ -102,9 +109,9 @@ function new_memory(){
 
     memorys.append(div_num_memory);
 
-    change_disable_condition(take_memory);
-    change_disable_condition(delete_memory);
-    change_disable_condition(view_memory);
+    change_disable_condition(take_memory, "active");
+    change_disable_condition(delete_memory, "active");
+    change_disable_condition(view_memory, "active");
 }
 
 export {
@@ -114,5 +121,6 @@ export {
     convert,
     delete_in_memory, 
     op_memory,
-    new_memory
+    new_memory,
+    take_in_memory
 };
