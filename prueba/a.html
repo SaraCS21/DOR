@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <section class="eventos_varios">
+        <div class="uno"> caja 1
+            <div class="dos"> caja 2
+                <div class="tres"> caja 3</div>
+            </div>
+        </div>
+    </section>
+
+    <script>
+
+        const eventosDiv = document.querySelector(".eventos_varios");
+    
+        eventosDiv.addEventListener("click", e =>{
+            console.log("Hemos realizado un clic en " + e.target.className);
+        })
+    
+    </script>
+
+</body>
+</html>

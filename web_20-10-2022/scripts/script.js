@@ -191,6 +191,7 @@ equal.addEventListener("click", e => {
 new_memory.addEventListener("click", e => {
     calculator.memory.push(result.textContent);
 
+    // Creación de botones
     const div_buttons = document.createElement("div"); 
     const button_mc = document.createElement("button"); 
     button_mc.innerText = "MC";
@@ -205,6 +206,7 @@ new_memory.addEventListener("click", e => {
     div_buttons.append(button_mc, button_mplus, button_mminus);
     div_buttons.className = "buttons";
 
+    // Div de los números de la memoria
     const div_num_memory = document.createElement("div"); 
     div_num_memory.className = "num_memory";
 
@@ -216,46 +218,75 @@ new_memory.addEventListener("click", e => {
 
     memorys.append(div_num_memory);
 
-    button_mc.className = `${calculator.memory.length -1}`;
-    button_mplus.className = `${calculator.memory.length -1}`;
-    button_mminus.className = `${calculator.memory.length -1}`;
-
-    take_memory.disabled = false;
+    // Disable
+    take_memory.disabled = undefined;
     take_memory.classList.remove("disabled");
-    delete_memory.disabled = false;
+    delete_memory.disabled = undefined;
     delete_memory.classList.remove("disabled");
-    view_memory.disabled = false;
+    view_memory.disabled = undefined;
     view_memory.classList.remove("disabled");
 
-    /* Eventos */
-
-    const new_delete_memory = document.querySelector(".num_memory #delete_memory");
-    const new_sum_memory = document.querySelector(".num_memory #sum_memory");
-    const new_rest_memory = document.querySelector(".num_memory #rest_memory");
-
-    new_delete_memory.addEventListener("click", e => {
-        let pos = new_delete_memory.className;
-        calculator.memory.splice(pos, pos+1);
-        console.log(calculator.memory)
-    });
-
-    new_sum_memory.addEventListener("click", e => {
-        let pos = new_sum_memory.className;
-        
-    });
-
-    new_rest_memory.addEventListener("click", e => {
-        let pos = new_rest_memory.className;
-        
-    });
 });
+
+// Botones dentro de la memoria
+
+memorys.addEventListener("click", e =>{
+    let element = e.target; 
+    let num = element.parentElement.previousElementSibling.textContent;
+    let pos_num = calculator.memory.indexOf(num);
+
+    console.log(num)
+    console.log(pos_num)
+    console.log(calculator.memory)
+
+    if (element.id === "delete_memory"){
+        element.parentElement.parentElement.remove()
+        calculator.memory.splice(pos_num, 1)
+
+    } else if (element.id === "sum_memory"){
+        let num_result = result.textContent.toString();
+        num = num.toString();
+    
+        if (num.includes(".")){
+            num = parseFloat(num);
+        } else {
+            num = parseInt(num);
+        }
+    
+        if (num_result.includes(".")){
+            num_result = parseFloat(num_result);
+        } else {
+            num_result = parseInt(num_result);
+        }
+
+        element.parentElement.previousElementSibling.innerHTML = num + num_result;
+
+    } else if (element.id === "rest_memory"){
+        let num_result = result.textContent.toString();
+        num = num.toString();
+    
+        if (num.includes(".")){
+            num = parseFloat(num);
+        } else {
+            num = parseInt(num);
+        }
+    
+        if (num_result.includes(".")){
+            num_result = parseFloat(num_result);
+        } else {
+            num_result = parseInt(num_result);
+        }
+
+        element.parentElement.previousElementSibling.innerHTML = num - num_result;
+    }
+})
 
 take_memory.addEventListener("click", e => {
     result.innerHTML = calculator.memory;
 });
 
 delete_memory.addEventListener("click", e => {
-    calculator.memory = "";
+    calculator.memory = [];
 
     take_memory.disabled = true;
     take_memory.className = "disabled";
