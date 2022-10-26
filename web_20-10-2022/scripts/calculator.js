@@ -9,15 +9,15 @@ class Calculator{
         return this.memory;
     }
 
-    sum(num1, num2) {
-        let result = (num1 + num2).toFixed(2);
-        result = `${result}`;
+    sum(num1, num2, pos) {
+        let result = (num1 + num2).toFixed(2).toString();
 
         if (result.includes(".00")){
             result = Math.round(result);
         }
 
-        return result;
+        this.memory[pos] = result;
+        return result.toString();
     }
 
     rest(num1, num2) {
@@ -28,7 +28,7 @@ class Calculator{
             result = Math.round(result);
         }
 
-        return result;
+        return result.toString();
     }
 
     multiplication(num1, num2){
@@ -95,6 +95,34 @@ class Calculator{
         return result;
     }
 
+    convert(num){
+        if (num.toString().includes(".")){
+            return parseFloat(num);
+        } else {
+            return parseInt(num);
+        }
+    }
+
+    delete_all_memory(){
+        this.memory = [];
+        console.log(this.memory)
+    }
+
+    add_element(element){
+        this.memory.push(element);
+        console.log(this.memory)
+    }
+
+    delete_element(pos_num){
+        this.memory.splice(pos_num, 1);
+        console.log(calculator_object.memory)
+    }
+
 }
 
-export default Calculator;
+const calculator_object = new Calculator(result.textContent);
+
+export {
+    Calculator,
+    calculator_object
+};

@@ -1,16 +1,14 @@
-import Calculator from "./calculator.js";
+import {
+    calculator_object
+} from "./calculator.js";
 
+const memorys = document.querySelector("#memorys");
 const result = document.querySelector("#num");
-result.innerHTML = 0;
-
 const operation = document.querySelector("#operation");
-operation.innerHTML = "";
 
-const calculator_object = new Calculator(result.textContent);
-
-const view_memory = document.querySelector("#view_memory");
-const take_memory = document.querySelector("#take_memory");
-const delete_memory = document.querySelector("#delete_memory");
+const view_m = document.querySelector("#view_memory");
+const take_m = document.querySelector("#take_memory");
+const delete_m = document.querySelector("#delete_memory");
 
 function clear(){
     result.innerHTML = 0;
@@ -32,17 +30,9 @@ function clear_last_num(){
     }
 }
 
-function convert(num){
-    if (num.includes(".")){
-        return parseFloat(num);
-    } else {
-        return parseInt(num);
-    }
-}
-
 function change_disable_condition(element, status){
     if (status === "active"){
-        element.disabled = false;
+        element.disabled = undefined;
         element.classList.remove("disabled");
     } else {
         element.disabled = true;
@@ -51,36 +41,39 @@ function change_disable_condition(element, status){
 }
 
 function delete_in_memory(){
-    calculator_object.memory = [];
+    calculator_object.delete_all_memory();
 
-    change_disable_condition(take_memory, "inactive");
-    change_disable_condition(delete_memory, "inactive");
-    change_disable_condition(view_memory, "inactive");
+    take_m.disabled = true;
+    take_m.className = "disabled";
+
+    change_disable_condition(take_m, "inactive");
+    change_disable_condition(delete_m, "inactive");
+    change_disable_condition(view_m, "inactive");
 }
 
-function op_memory(operation){
+function op_memory(operation, pos = 0){
     let num = result.textContent.toString();
-    let num_memory = calculator_object.memory.toString();
+    let num_memory = calculator_object.memory[pos];
 
-    let num1 = convert(num);
-    let num2 = convert(num_memory);
+    let num1 = calculator_object.convert(num);
+    let num2 = calculator_object.convert(num_memory);
 
-    console.log(num1)
-    console.log(num2)
+    console.log(pos)
 
     if (operation === "sum"){
-        calculator_object.memory = calculator_object.sum(num2, num1);
+        calculator_object.sum(num2, num1, pos);
+        console.log("hola")
     } else {
-        calculator_object.memory = calculator_object.rest(num2, num1);
+        calculator_object.memory[pos] = calculator_object.rest(num2, num1);
     }
 }
 
 function take_in_memory(){
-    result.innerHTML = calculator_object.memory
+    result.innerHTML = calculator_object.memory[0]
 }
 
-function new_memory(){
-    calculator_object.memory.push(result.textContent);
+function new_item_memory(){
+    calculator_object.add_element(result.textContent);
 
     // crear botones
     const div_buttons = document.createElement("div"); 
@@ -109,18 +102,17 @@ function new_memory(){
 
     memorys.append(div_num_memory);
 
-    change_disable_condition(take_memory, "active");
-    change_disable_condition(delete_memory, "active");
-    change_disable_condition(view_memory, "active");
+    change_disable_condition(take_m, "active");
+    change_disable_condition(delete_m, "active");
+    change_disable_condition(view_m, "active");
 }
 
 export {
     clear, 
     clear_last_num, 
-    clear_last_operating, 
-    convert,
+    clear_last_operating,
     delete_in_memory, 
     op_memory,
-    new_memory,
+    new_item_memory,
     take_in_memory
 };

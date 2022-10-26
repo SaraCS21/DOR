@@ -229,7 +229,6 @@ new_memory.addEventListener("click", e => {
 });
 
 // Botones dentro de la memoria
-
 memorys.addEventListener("click", e =>{
     let element = e.target; 
     let num = element.parentElement.previousElementSibling.textContent;
