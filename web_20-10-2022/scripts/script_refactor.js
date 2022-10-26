@@ -3,7 +3,7 @@ import {
 } from "./calculator.js";
 
 import {
-    op_memory
+    change_disable_condition
 } from "./functions.js";
 
 import {
@@ -29,6 +29,10 @@ result.innerHTML = 0;
 const operation = document.querySelector("#operation");
 operation.innerHTML = "";
 
+const view_m = document.querySelector("#view_memory");
+const take_m = document.querySelector("#take_memory");
+const delete_m = document.querySelector("#delete_memory");
+
 // Botones normales
 calculator.addEventListener("click", e => {
     let element = e.target;
@@ -51,6 +55,7 @@ calculator.addEventListener("click", e => {
             if ((element.id === "rest" && result.textContent !== "0") || element.id !== "rest"){
                 operation.innerHTML = result.textContent + simple_operator[element.id];
                 result.innerHTML = "";
+                
             } else {
                 result.innerHTML = "-";
             }
@@ -73,17 +78,16 @@ calculator.addEventListener("click", e => {
 
     // Igual
     } else if (element.id === "equal"){
-        if (result.textContent !== "0"){
-            operation.innerHTML += result.textContent;
-            let op = operation.textContent.split(" ");
+        operation.innerHTML += result.textContent;
+        let op = operation.textContent.split(" ");
+
+        let num1 = calculator_object.convert(op[0]);
+        let num2 = calculator_object.convert(op[2]);
+        let pos_operator = simple_operators_values.indexOf(` ${op[1]} `)
+
+        let operator_text = Object.keys(simple_operator)[pos_operator] 
+        result.innerHTML = operations[operator_text](num1, num2);
     
-            let num1 = calculator_object.convert(op[0]);
-            let num2 = calculator_object.convert(op[2]);
-            let pos_operator = simple_operators_values.indexOf(` ${op[1]} `)
-    
-            let operator_text = Object.keys(simple_operator)[pos_operator] 
-            result.innerHTML = operations[operator_text](num1, num2);
-        }
     }
 })
 
@@ -92,7 +96,22 @@ calculator.addEventListener("click", e => {
     let element = e.target;
 
     if (memory_operators_keys.includes(element.id)){
-        memory_operators[element.id]()
+        if (element.id === "sum_memory" || element.id === "rest_memory"){
+            let first_memory = document.querySelector("#memorys .num_memory p");
+            let a = memory_operators[element.id]();
+            first_memory.innerHTML = a;
+
+        } else if (element.id === "delete_memory"){
+            let array_memory = document.querySelectorAll("#memorys .num_memory");
+            array_memory.forEach(memory => memory.remove());
+
+            change_disable_condition(take_m, "inactive");
+            change_disable_condition(delete_m, "inactive");
+            change_disable_condition(view_m, "inactive");
+
+        } else {
+            memory_operators[element.id]();
+        }
     }
 });
 
@@ -105,12 +124,18 @@ memorys.addEventListener("click", e =>{
     if (element.className === "close"){
         memorys.style.display = "none"
 
-    } else if (element.id === "delete_memory"){
+    } else if (element.id === "delete_in_memory"){
         element.parentElement.parentElement.remove()
         calculator_object.delete_element(pos_num)
 
-    } else if (element.id === "sum_memory" || element.id === "rest_memory"){
-        memory_operators[element.id](pos_num)
-        element.parentElement.previousElementSibling.innerHTML = calculator_object.memory[pos_num];
+        if (calculator_object.memory.length === 0){
+            change_disable_condition(take_m, "inactive");
+            change_disable_condition(delete_m, "inactive");
+            change_disable_condition(view_m, "inactive");
+            memorys.style.display = "none";
+        }
+
+    } else if (element.id === "sum_in_memory" || element.id === "rest_in_memory"){
+        element.parentElement.previousElementSibling.innerHTML = memory_operators[element.id](pos_num);
     } 
 })

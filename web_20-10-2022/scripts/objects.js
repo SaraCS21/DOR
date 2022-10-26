@@ -7,7 +7,7 @@ import {
     clear, 
     clear_last_num, 
     clear_last_operating, 
-    delete_in_memory, 
+    delete_all_memory, 
     op_memory,
     new_item_memory,
     take_in_memory
@@ -55,11 +55,14 @@ const eliminations_keys = Object.keys(eliminations);
 
 const memory_operators = {
     "take_memory": () => take_in_memory(),
-    "delete_a_memory": () => delete_in_memory(),
+    "delete_memory": () => delete_all_memory(),
     "sum_memory": (pos_num) => op_memory("sum", pos_num),
     "rest_memory": (pos_num) => op_memory("rest", pos_num),
     "view_memory": () => memorys.style.display = "flex",
-    "new_memory": () => new_item_memory()
+    "new_memory": () => new_item_memory(),
+    "delete_in_memory": () => delete_all_memory(),
+    "sum_in_memory": (pos_num) => op_memory("sum", pos_num),
+    "rest_in_memory": (pos_num) => op_memory("rest", pos_num)
 }
 const memory_operators_keys = Object.keys(memory_operators);
 
