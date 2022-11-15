@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="./fail/output.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Display:wght@100;200;300&display=swap"
+        rel="stylesheet">
+
+    <title>Creación de Formularios</title>
+</head>
+
+<body>
+    <header class="flex items-center justify-center">
+        <h1>Creación de Formularios</h1>
+    </header>
+
+    <nav id="my_nav" class="h-20">
+        <div class="h-full">
+            <ul class="flex flex-row items-center justify-center h-full">
+                <li>
+                    <a href="./index.html">
+                        Creación de Formularios
+                    </a>
+                    <ul class="hidden">
+                        <li><a href="./index.html#form">Form</a></li>
+                        <li><a href="./index.html#fieldset_legend">Fieldset y Legend</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="./entrada_datos.html" role="button">
+                        Entradas de Datos
+                    </a>
+                    <ul class="hidden">
+                        <li><a href="./entrada_datos.html#label_input">Label e Input</a></li>
+                        <li><a href="./entrada_datos.html#textarea">Textarea</a></li>
+                    </ul>
+                </li>
+                <li class="">
+                    <a href="./listas_desplegables.html">
+                        Listas desplegables
+                    </a>
+                    <ul class="hidden">
+                        <li><a href="./listas_desplegables.html#select_datalist">Select y
+                                Datalist</a></li>
+                        <li><a href="./listas_desplegables.html#option_optgroup">Option y
+                                Optgroup</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="./botones.html">Botones</a>
+                </li>
+                <li>
+                    <a href="./output.html">Output</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <main>
+        <section class="info">
+            <h2 id="form">Etiqueta Form</h2>
+            <p class="texto">Principalmente para crear un formulario en HTML es imprescindible conocer la etiqueta
+                &ltform&gt, dentro de esta escribiremos todo el código relacionado con nuestros formularios. También
+                podemos pasarle un parámetro a esta etiqueta, el cuál indicará la función a la que llamaremos cuando
+                enviemos el formulario.</p>
+            <section class="codigo mb-4 p-4 rounded-lg">
+                <p>&lt<span class="etiqueta">form</span> <span class="atributos">action</span>=""&gt</p>
+                <br>
+                <p class="indentado1 comentario">&lt!-- Código dentro de nuestro formulario --&gt</p>
+                <br>
+                <p>&lt/<span class="etiqueta">form</span>&gt</p>
+            </section>
+
+            <p>También debemos saber que hay otros atributos de los que podemos hacer uso en esta etiqueta.</p>
+            <h3>autocomplete</h3>
+            <p>Indica si los valores del formularios pueden, o no, ser escritos de manera automática con los datos que
+                el sistema tiene guardados sobre nosotros. Tiene dos posibles valores:</p>
+            <ul>
+                <li>
+                    <p><span class="destacado">off:</span> el usuario deberá escribir todos los campos.</p>
+                </li>
+                <li>
+                    <p><span class="destacado">on:</span> el navegador recomendará al usuario con posibles datos para
+                        completar los campos.</p>
+                </li>
+            </ul>
+
+            <h3>method</h3>
+            <p>Es el método que usa el navegador para enviar el formulario. Tiene dos posibles valores:</p>
+            <ul>
+                <li>
+                    <p><span class="destacado">post:</span> los datos que pase el usuario son incluídos en el cuerpo del
+                        formulario y enviado al servidor.</p>
+                </li>
+                <li>
+                    <p><span class="destacado">get:</span> los datos que pase el usuario son incluídos en la URI del
+                        atributo action, con un "?" como separador, y enviada al servidor.</p>
+                </li>
+            </ul>
+
+            <h2 id="fieldset_legend">Etiquetas Fieldset y Legend</h2>
+            <p class="texto">Permite separar el formulario en diferentes secciones. Permite tener una etiqueta legend,
+                de manera opcional, para darle título a la sección</p>
+            <section class="codigo mb-4 p-4 rounded-lg">
+                <p>&lt<span class="etiqueta">form</span> <span class="atributos">action</span>=""&gt</p>
+                <br>
+                <p class="indentado1">&lt<span class="etiqueta">fieldset</span>&gt</p>
+                <p class="indentado2">&lt<span class="etiqueta">legend</span>&gtTítulo del bloque 1&lt/<span
+                        class="etiqueta">legend</span>&gt</p>
+                <p class="indentado2 comentario">&lt!-- Código dentro de nuestro formulario --&gt</p>
+                <p class="indentado1">&lt/<span class="etiqueta">fieldset</span>&gt</p>
+                <br>
+                <p class="indentado1">&lt<span class="etiqueta">fieldset</span>&gt</p>
+                <p class="indentado2">&lt<span class="etiqueta">legend</span>&gtTítulo del bloque 2&lt/<span
+                        class="etiqueta">legend</span>&gt</p>
+                <p class="indentado2 comentario">&lt!-- Código dentro de nuestro formulario --&gt</p>
+                <p class="indentado1">&lt/<span class="etiqueta">fieldset</span>&gt</p>
+                <br>
+                <p>&lt/<span class="etiqueta">form</span>&gt</p>
+            </section>
+        </section>
+    </main>
+
+    <form id="ejemplo" class="flex justify-evenly w-100 my-5"> 
+        <fieldset class="w-96 px-5 border border-dark rounded-lg">
+            <legend class="text-center p-2">Nombre y Apellidos</legend>
+            <div class="flex justify-between mb-3">
+                <label for="exampleInputName" class="w-50">Nombre</label>
+                <input type="text" class="text-center w-50" id="exampleInputName">
+            </div>
+            <div class="flex justify-between mb-3">
+                <label for="exampleInputSurname" class="w-50">Apellidos</label>
+                <input type="text" class="text-center w-50" id="exampleInputSurname">
+            </div>
+        </fieldset>
+
+        <fieldset class="w-96 px-5 border border-dark rounded-lg">
+            <legend class="text-center p-2">Dirección</legend>
+            <div class="flex justify-between mb-3">
+                <label for="exampleInputDirection" class="w-50">Dirección</label>
+                <input type="text" class="text-center w-50" id="exampleInputDirection">
+            </div>
+            <div class="flex justify-between mb-3">
+                <label for="exampleInputCP" class="w-50">Código Postal</label>
+                <input type="text" class="text-center w-50" id="exampleInputCP">
+            </div>
+        </fieldset>
+    </form>
+</body>
+
+</html>

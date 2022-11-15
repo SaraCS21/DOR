@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+    <link rel="stylesheet" href="etiquetas.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Display:wght@100;200;300&display=swap"
+        rel="stylesheet">
+
+    <title>Output</title>
+</head>
+
+<body>
+    <header class="d-flex align-items-center vh-25">
+        <h1 class="text-center">Output</h1>
+    </header>
+    <nav id="my_nav" class="navbar navbar-expand-lg bg-light py-3">
+        <div class="container-fluid">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item dropdown me-3">
+                        <a class="nav-link active dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                            aria-expanded="false">
+                            Creación de Formularios
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="./index.html#form">Form</a></li>
+                            <li><a class="dropdown-item" href="./index.html#fieldset_legend">Fieldset y Legend</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown me-3">
+                        <a class="nav-link active dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                            aria-expanded="false">
+                            Entradas de Datos
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="./entrada_datos.html#label_input">Label e Input</a></li>
+                            <li><a class="dropdown-item" href="./entrada_datos.html#textarea">Textarea</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown me-3">
+                        <a class="nav-link active dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                            aria-expanded="false">
+                            Listas desplegables
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="./listas_desplegables.html#select_datalist">Select y
+                                    Datalist</a></li>
+                            <li><a class="dropdown-item" href="./listas_desplegables.html#option_optgroup">Option y
+                                    Optgroup</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item me-3">
+                        <a class="nav-link active" aria-current="page" href="./botones.html">Botones</a>
+                    </li>
+                    <li class="nav-item me-3">
+                        <a class="nav-link active" href="./output.html">Output</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <main>
+        <section class="info">
+            <h2>Etiqueta Output</h2>
+            <p class="texto">Representa la salida de un cálculo o proceso, normalmente llevado a cabo por un programa.
+                Es puramente semántico y debería ser usado siempre para mostrar los resultados de un cálculo o proceso
+                llevado a cabo en el documento.</p>
+            <section class="codigo mb-4 p-4 rounded-3">
+                <p>&lt<span class="etiqueta">form</span> <span class="atributos">action</span>=""&gt</p>
+                <br>
+                <p class="indentado1">&lt<span class="etiqueta">p</span>&gtValor a: <span class="etiqueta">input</span>
+                    <span class="atributos">type</span>="<span class="valores">number</span>" <span
+                        class="atributos">id</span>="<span class="valores">a</span>" <span
+                        class="atributos">value</span>="<span class="valores">0</span>"&gt&lt/<span
+                        class="etiqueta">p</span>&gt</p>
+                <p class="indentado1">&lt<span class="etiqueta">p</span>&gtValor b: <span class="etiqueta">input</span>
+                    <span class="atributos">type</span>="<span class="valores">number</span>" <span
+                        class="atributos">id</span>="<span class="valores">b</span>" <span
+                        class="atributos">value</span>="<span class="valores">0</span>"&gt&lt/<span
+                        class="etiqueta">p</span>&gt</p>
+                <p class="indentado1">&lt<span class="etiqueta">p</span>&gt<span class="etiqueta">input</span> <span
+                        class="atributos">id</span>="<span class="valores">boton_suma</span>" <span
+                        class="atributos">type</span>="<span class="valores">button</span>" <span
+                        class="atributos">value</span>="<span class="valores">calcular</span>"&gt&lt/<span
+                        class="etiqueta">p</span>&gt</p>
+                <p class="indentado1">&lt<span class="etiqueta">p</span>&gtResultado: <span
+                        class="etiqueta">output</span> <span class="atributos">id</span>="<span
+                        class="valores">number</span>" <span class="atributos">id</span>="<span
+                        class="valores">suma</span>" <span class="atributos">for</span>="<span class="valores">a
+                        b</span>"&gt&lt/<span class="etiqueta">p</span>&gt</p>
+                <br>
+                <p>&lt/<span class="etiqueta">form</span>&gt</p>
+            </section>
+    </main>
+
+    <form class="d-flex flex-column mb-3">
+        <section class="d-flex justify-content-center w-25">
+            <p class="text-center">Valor a <input class="form-control mt-2" type="number" id="a" value="0" min="0" max="30"></p>
+            <p class="text-center">Valor b <input class="form-control mt-2" type="number" id="b" value="0" min="0" max="30"></p>
+        </section>
+        <p><input class="btn" id="boton_suma" type="button" value="Calcular"></p>
+        <p>Resultado: <output id="suma" for="a b"></output></p>
+    </form>
+
+    <script>
+
+        const boton_suma = document.querySelector("#boton_suma");
+
+        function suma() {
+            const a = document.querySelector("#a");
+            const b = document.querySelector("#b");
+            const resultado = parseInt(a.value) + parseInt(b.value);
+
+            const output = document.querySelector("output");
+            output.innerText = resultado;
+        }
+
+        boton_suma.addEventListener("click", suma)
+
+
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3"
+        crossorigin="anonymous"></script>
+
+</body>
+
+
+
+</html>

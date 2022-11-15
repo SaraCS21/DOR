@@ -1,0 +1,168 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Estilos generales */
+
+:root{
+    --color_amarillo_claro: #fff3d4;
+    --color_amarillo: #fce5aa;
+    --color_verde: #9dc0b5;
+
+    --codigo_etiqueta: rgb(223, 17, 86);
+    --codigo_atributo: rgb(14, 134, 195);
+    --codigo_valor: rgb(7, 175, 57);
+    --base_color: #efefef;
+    --fuente: 'Noto Sans Display', sans-serif;
+}
+
+*{
+    margin: 0 auto;
+    padding: 0;
+    box-sizing: border-box;
+
+    font-family: var(--fuente);
+    font-size: 1.05rem;
+}
+
+header{
+    height: 200px;
+    background-color: var(--color_verde);
+}
+
+header h1{
+    font-size: 3.5rem;
+}
+
+/* BARRA DE SCROLL */
+
+body::-webkit-scrollbar {
+    width: 12px;              
+}
+
+body::-webkit-scrollbar-track {
+    background: var(--color_verde);        
+}
+
+body::-webkit-scrollbar-thumb {
+    background-color: var(--color_amarillo);    
+    border-radius: 50px;       
+    border: 3px solid var(--color_verde); 
+}
+
+/* NAVEGADOR */
+
+#my_nav, #my_nav ul {
+    background-color: var(--color_amarillo) !important;
+}
+
+#my_nav li a:hover{
+    background-color: var(--color_amarillo) !important;
+    text-shadow: #79693f 0.1em 0.1em 0.2em ;
+    transition: 0.5s;
+}
+
+/* Estilos páginas separadas */
+
+main{
+    padding-top: 1%;
+    width: 80%;
+
+    display: flex;
+    justify-content: center;
+}
+
+#ejemplo fieldset,
+.color_input, 
+.color_input:valid,
+select, .datalist{
+background-color: var(--color_amarillo_claro) !important;
+}
+
+textarea{
+    height: 200px;
+    resize: none;
+    background-color: var(--color_amarillo_claro) !important;
+}
+
+.info{
+    width: 80%;
+}
+
+.info h2{
+    margin-top: 2%;
+    text-align: center;
+
+    font-size: 1.7rem;
+}
+
+.info li{
+    width: 100%;
+    padding-left: 0%;
+    padding-bottom: 0%;
+
+    position: relative;
+    left: 4%;
+
+    list-style: disc;
+    color: var(--color_verde);
+}
+
+.info li p{
+    color: black;
+}
+
+.info .texto, .info h3{
+    margin-top: 2%;
+    margin-bottom: 2%;
+}
+
+.info .indentado1{
+    text-indent: 5%;
+}
+
+.info .indentado2{
+    text-indent: 10%;
+}
+
+.info .comentario{
+    color: rgb(110, 110, 110);
+    font-style: italic;
+}
+
+.info .codigo{
+    background-color: rgb(244, 244, 244);
+}
+
+.info .etiqueta{
+    color: var(--codigo_etiqueta);
+}
+
+.info .atributos{
+    color: var(--codigo_atributo);
+}
+
+.info .valores{
+    color: var(--codigo_valor);
+}
+
+.info .destacado{
+    font-weight: bold;
+}
+
+button:active,
+input[type=submit]:active,
+input[type=button]:active{
+    box-shadow: 0 0.2rem #dfd9d9;
+    transform: translateY(0.2rem);
+}
+
+button,
+input[type=submit],
+input[type=button]{
+    box-shadow: 0 0.4rem var(--color_amarillo_claro) !important;
+    cursor: pointer;
+
+    background: var(--color_verde) !important;
+    color: white !important;
+}
