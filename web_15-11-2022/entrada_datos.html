@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <link rel="stylesheet" href="./fail/output.css">
+    <link rel="stylesheet" href="./dist/output.css">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -163,28 +163,28 @@
             <h3>placeholder</h3>
             <p>Toma un valor de ejemplo para mostrar en el campo de entrada cuando esté vacío.</p>
 
-            <form class="flex flex-wrap w-100 my-5" action="">
-                <div class="flex w-100 my-5">
-                    <div class="w-96 ">
-                        <label class="w-50 pb-5" for="nombre">Nombre</label>
-                        <input class="text-center w-50 border-2 border-solid rounded-lg" type="text" name="nombre" placeholder="Mi nombre es...">
+            <form class="flex flex-wrap w-96 my-5" action="">
+                <div class="flex w-full my-5">
+                    <div class="w-1/2">
+                        <label for="nombre">Nombre</label>
+                        <input class="text-center border-2 border-solid rounded-lg" type="text" name="nombre" placeholder="Mi nombre es...">
                     </div>
 
-                    <div>
-                        <label class="w-50" for="contraseña">Contraseña</label>
-                        <input class="text-center w-50 border-2 border-solid rounded-lg" type="password" name="contraseña">
+                    <div class="w-1/2">
+                        <label for="contraseña">Contraseña</label>
+                        <input class="text-center border-2 border-solid rounded-lg" type="password" name="contraseña">
                     </div>
                 </div>
 
-                <div class="flex w-100 my-5 mt-5">  
-                    <div class="w-96">
-                        <label class="w-50" for="fecha">Nacimiento</label>
-                        <input class="text-center w-50 border-2 border-solid rounded-lg" type="date" name="fecha">
+                <div class="flex w-full my-5">  
+                    <div class="w-1/2">
+                        <label for="fecha">Nacimiento</label>
+                        <input class="text-center w-full border-2 border-solid rounded-lg" type="date" name="fecha">
                     </div>
 
-                    <div>
-                        <label class="w-50" for="email">Correo</label>
-                        <input class="text-center w-50 border-2 border-solid rounded-lg" type="email" name="email" placeholder="ejemplo@hotmail.com">
+                    <div class="w-1/2">
+                        <label for="email">Correo</label>
+                        <input class="text-center border-2 border-solid rounded-lg" type="email" name="email" placeholder="ejemplo@hotmail.com">
                     </div>
                 </div>
             </form>
@@ -229,7 +229,7 @@
     </main>
 
     <form class="d-flex justify-content-center m-4" action="">
-        <textarea class="form-control w-50 p-2" name="comentario" id="comentario"
+        <textarea class="form-control p-2" name="comentario" id="comentario"
             placeholder="Escriba su comentario...">
         </textarea>
     </form>
