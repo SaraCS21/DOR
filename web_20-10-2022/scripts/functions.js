@@ -40,11 +40,8 @@ function change_disable_condition(element, status){
     }
 }
 
-function delete_in_memory(){
+function delete_all_memory(){
     calculator_object.delete_all_memory();
-
-    take_m.disabled = true;
-    take_m.className = "disabled";
 
     change_disable_condition(take_m, "inactive");
     change_disable_condition(delete_m, "inactive");
@@ -58,13 +55,10 @@ function op_memory(operation, pos = 0){
     let num1 = calculator_object.convert(num);
     let num2 = calculator_object.convert(num_memory);
 
-    console.log(pos)
-
     if (operation === "sum"){
-        calculator_object.sum(num2, num1, pos);
-        console.log("hola")
+        return calculator_object.sum(num2, num1, pos);
     } else {
-        calculator_object.memory[pos] = calculator_object.rest(num2, num1);
+        return calculator_object.rest(num2, num1, pos);
     }
 }
 
@@ -73,19 +67,20 @@ function take_in_memory(){
 }
 
 function new_item_memory(){
+    console.log(result.textContent)
     calculator_object.add_element(result.textContent);
 
     // crear botones
     const div_buttons = document.createElement("div"); 
     const button_mc = document.createElement("button"); 
     button_mc.innerText = "MC";
-    button_mc.id = "delete_memory";
+    button_mc.id = "delete_in_memory";
     const button_mplus = document.createElement("button"); 
     button_mplus.innerText = "M+";
-    button_mplus.id = "sum_memory";
+    button_mplus.id = "sum_in_memory";
     const button_mminus = document.createElement("button"); 
     button_mminus.innerText = "M-";
-    button_mminus.id = "rest_memory";
+    button_mminus.id = "rest_in_memory";
 
     div_buttons.append(button_mc, button_mplus, button_mminus);
     div_buttons.className = "buttons";
@@ -111,8 +106,9 @@ export {
     clear, 
     clear_last_num, 
     clear_last_operating,
-    delete_in_memory, 
+    delete_all_memory, 
     op_memory,
     new_item_memory,
-    take_in_memory
+    take_in_memory,
+    change_disable_condition
 };

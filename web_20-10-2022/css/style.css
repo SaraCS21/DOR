@@ -9,7 +9,7 @@ body{
     max-height: 100vh;
 }
 
-main{
+main, #memorys{
     width: 500px;
     height: auto;
     margin: auto;
@@ -186,4 +186,8 @@ button:hover{
 .disabled{
     filter: brightness(70%);
     cursor: auto;
+}
+
+#memorys{
+    color: white;
 }

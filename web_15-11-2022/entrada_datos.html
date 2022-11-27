@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="./dist/output.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Display:wght@100;200;300&display=swap"
+        rel="stylesheet">
+
+    <title>Entrada de Datos</title>
+</head>
+
+<body>
+    <header class="flex items-center justify-center">
+        <h1>Entrada de Datos</h1>
+    </header>
+    <nav id="my_nav" class="h-20">
+        <div class="h-full">
+            <ul class="flex flex-row items-center justify-center h-full">
+                <li>
+                    <a href="./index.html">
+                        Creación de Formularios
+                    </a>
+                    <ul class="hidden">
+                        <li><a href="./index.html#form">Form</a></li>
+                        <li><a href="./index.html#fieldset_legend">Fieldset y Legend</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="./entrada_datos.html" role="button">
+                        Entradas de Datos
+                    </a>
+                    <ul class="hidden">
+                        <li><a href="./entrada_datos.html#label_input">Label e Input</a></li>
+                        <li><a href="./entrada_datos.html#textarea">Textarea</a></li>
+                    </ul>
+                </li>
+                <li class="">
+                    <a href="./listas_desplegables.html">
+                        Listas desplegables
+                    </a>
+                    <ul class="hidden">
+                        <li><a href="./listas_desplegables.html#select_datalist">Select y
+                                Datalist</a></li>
+                        <li><a href="./listas_desplegables.html#option_optgroup">Option y
+                                Optgroup</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="./botones.html">Botones</a>
+                </li>
+                <li>
+                    <a href="./output.html">Output</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <main>
+        <section class="info">
+            <h2 id="label_input">Etiquetas Label e Input</h2>
+            <p class="texto">La etiqueta &ltlabel&gt se utiliza para definir un formulario en concreto, vinculándolo y
+                dejando al usuario interacturar con este. Cada etiqueta &ltlabel&gt está vinculada a un &ltinput&gt a
+                través del atributo for. La etiqueta &ltinput&gt se utiliza para crear los elementos interactivos de los
+                formularios.</p>
+            <p class="texto">Es recomendable, a nivel de sintaxis, colocar el nombre del campo del formulario en un
+                span.</p>
+            <section class="codigo mb-4 p-4 rounded-lg">
+                <p>&lt<span class="etiqueta">form</span> <span class="atributos">action</span>=""&gt</p>
+                <br>
+                <p class="indentado1">&lt<span class="etiqueta">label</span> <span class="atributos">for</span>="<span
+                        class="valores">nombre</span>"&gt</p>
+                <p class="indentado2">&lt<span class="etiqueta">span</span>"&gtNombre: &lt/<span
+                        class="etiqueta">span</span> &gt</p>
+                <p class="indentado2">&lt<span class="etiqueta">input</span> <span class="atributos">type</span>="<span
+                        class="valores">text</span>" <span class="atributos">name</span>="<span
+                        class="valores">nombre</span>"&gt</p>
+                <p class="indentado1">&lt/<span class="etiqueta">label</span>&gt</p>
+                <br>
+                <p>&lt/<span class="etiqueta">form</span>&gt</p>
+            </section>
+
+            <p>También es importante saber que la etiqueta input posee varios atributos, entre ellos encontraremos:</p>
+            <h3>type</h3>
+            <p>Indica el tipo de control que vamos a mostrar, por defecto se le asigna el valor "text". Entre los
+                valores que puede tener se encuentran:</p>
+            <ul>
+                <li>
+                    <p><span class="destacado">text:</span> crea un campo de texto simple, es el valor por defecto.</p>
+                </li>
+                <li>
+                    <p><span class="destacado">password:</span> permite introducir una cadena de manera oculta. Se le
+                        puede añadir el atributo "maxlenght" para definir una longitud máxima.</p>
+                </li>
+                <li>
+                    <p><span class="destacado">email:</span> crea un campo en el que tan solo podremos introducir una
+                        dirección de correo electrónico.</p>
+                </li>
+                <li>
+                    <p><span class="destacado">tel:</span> permite introducir un número de teléfono. Podemos incluir los
+                        atributos "pattern" y "maxlenght" para restringir los valores introducidos.</p>
+                </li>
+                <li>
+                    <p><span class="destacado">url:</span> permite introducir una URL.</p>
+                </li>
+                <li>
+                    <p><span class="destacado">number:</span> tan solo permite introducir números.</p>
+                </li>
+                <li>
+                    <p><span class="destacado">color:</span> permite especificar un color.</p>
+                </li>
+                <li>
+                    <p><span class="destacado">file:</span> permite al usuario seleccionar un archivo. Podemos añadirle
+                        en atributo "accept" para indicar los tipos de archivos que podrá seleccionar.</p>
+                </li>
+                <li>
+                    <p><span class="destacado">image:</span> permite al usuario enviar una imagen. Podemos añadir el
+                        atributo "alt" para definir un texto alternativo, y height y width para definir el tamaño de la
+                        imagen.</p>
+                </li>
+                <li>
+                    <p><span class="destacado">date:</span> permite introducir una fecha (año, mes y día).</p>
+                </li>
+                <li>
+                    <p><span class="destacado">datetime:</span> permite introducir una fecha y, además, una hora (horas,
+                        minutos, segundos y fracciones de segundo).</p>
+                </li>
+                <li>
+                    <p><span class="destacado">month:</span> permite introducir un mes y año.</p>
+                </li>
+                <li>
+                    <p><span class="destacado">week:</span> permite introducir una fecha, más concretamente una semana
+                        del año.</p>
+                </li>
+                <li>
+                    <p><span class="destacado">radio:</span> crea una casilla de selección, en caso de haber varias tan
+                        solo podremos seleccionar uno. Con el atributo "value" indicamos el valor que se enviará por ese
+                        elemento.</p>
+                </li>
+                <li>
+                    <p><span class="destacado">checkbox:</span> crea una casilla de selección, en caso de haber varias
+                        podemos seleccionar todas las que queramos. Con el atributo "value" indicaremos el tipo de valor
+                        que se enviará por elemento.</p>
+                </li>
+                <li>
+                    <p><span class="destacado">button:</span> crea un botón sin un comportamiento asignado.</p>
+                </li>
+                <li>
+                    <p><span class="destacado">submit:</span> crea botón para enviar el formulario.</p>
+                </li>
+                <li>
+                    <p><span class="destacado">reset:</span> crea un botón que restaura todos los contenidos del
+                        formulario a sus valores predeterminados.</p>
+                </li>
+            </ul>
+
+            <h3>placeholder</h3>
+            <p>Toma un valor de ejemplo para mostrar en el campo de entrada cuando esté vacío.</p>
+
+            <form class="flex flex-wrap w-96 my-5" action="">
+                <div class="flex w-full my-5">
+                    <div class="w-1/2">
+                        <label for="nombre">Nombre</label>
+                        <input class="text-center border-2 border-solid rounded-lg" type="text" name="nombre" placeholder="Mi nombre es...">
+                    </div>
+
+                    <div class="w-1/2">
+                        <label for="contraseña">Contraseña</label>
+                        <input class="text-center border-2 border-solid rounded-lg" type="password" name="contraseña">
+                    </div>
+                </div>
+
+                <div class="flex w-full my-5">  
+                    <div class="w-1/2">
+                        <label for="fecha">Nacimiento</label>
+                        <input class="text-center w-full border-2 border-solid rounded-lg" type="date" name="fecha">
+                    </div>
+
+                    <div class="w-1/2">
+                        <label for="email">Correo</label>
+                        <input class="text-center border-2 border-solid rounded-lg" type="email" name="email" placeholder="ejemplo@hotmail.com">
+                    </div>
+                </div>
+            </form>
+
+            <h2 id="textarea">Etiqueta Textarea</h2>
+            <p class="texto">Representa un control de escritura de texto de manera multilínea. Es recomendable indicar
+                el ancho de la caja con el atributo "cols", en caso de no hacerlo su valor predeterminado será de 20. De
+                la misma forma podemos definir la altura con "rows"</p>
+            <section class="codigo mb-4 p-4 rounded-3">
+                <p>&lt<span class="etiqueta">form</span> <span class="atributos">action</span>=""&gt</p>
+                <br>
+                <p class="indentado1">&lt<span class="etiqueta">textarea</span> <span
+                        class="atributos">name</span>="<span class="valores">comentario</span>" <span
+                        class="atributos">id</span>="<span class="valores">comentario</span> <span
+                        class="atributos">cols</span>="<span class="valores">30</span>" <span
+                        class="atributos">rows</span>="<span class="valores">10</span>"&gt</p>
+                <br>
+                <p>&lt/<span class="etiqueta">form</span>&gt</p>
+            </section>
+
+            <p>Al igual que con cualquier otra etiqueta, disponemos de diversos atributos, entre ellos:</p>
+            <h3>readonly</h3>
+            <p>Indica que el usuario no puede modificar el contenido, pero si podrá seleccionarlo.</p>
+            <h3>resize</h3>
+            <p>Nos permite definir el comportamiento que tomará el &lttextarea&gt cuando intentemos modificar su tamaño
+                como usuarios. Este no es un atributo realmente de la etiqueta HTML, sino una propiedad del CSS.</p>
+            <ul>
+                <li>
+                    <p><span class="destacado">none:</span> no permite al usuario redimensionarlo.</p>
+                </li>
+                <li>
+                    <p><span class="destacado">both:</span> es dimensionable en ambos ejes.</p>
+                </li>
+                <li>
+                    <p><span class="destacado">horizontal:</span> es dimensionable solamente en el eje horizontal.</p>
+                </li>
+                <li>
+                    <p><span class="destacado">vertical:</span> es dimensionable solamente en el eje vertical.</p>
+                </li>
+            </ul>
+        </section>
+    </main>
+
+    <form class="d-flex justify-content-center m-4" action="">
+        <textarea class="form-control p-2" name="comentario" id="comentario"
+            placeholder="Escriba su comentario...">
+        </textarea>
+    </form>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>

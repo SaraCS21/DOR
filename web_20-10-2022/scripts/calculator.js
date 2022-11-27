@@ -14,18 +14,24 @@ class Calculator{
 
         if (result.includes(".00")){
             result = Math.round(result);
+        } 
+
+        if (pos !== undefined){
+            this.memory[pos] = result.toString();
         }
 
-        this.memory[pos] = result;
         return result.toString();
     }
 
-    rest(num1, num2) {
-        let result = (num1 - num2).toFixed(2);
-        result = `${result}`;
+    rest(num1, num2, pos) {
+        let result = (num1 - num2).toFixed(2).toString();
 
         if (result.includes(".00")){
             result = Math.round(result);
+        }
+
+        if (pos !== undefined){
+            this.memory[pos] = result.toString();
         }
 
         return result.toString();
@@ -48,6 +54,11 @@ class Calculator{
         if (result.includes(".00")){
             result = Math.round(result);
         }
+
+        if (num2 === 0){
+            result = NaN
+        }
+
         return result;
     }
 
@@ -105,22 +116,18 @@ class Calculator{
 
     delete_all_memory(){
         this.memory = [];
-        console.log(this.memory)
     }
 
     add_element(element){
         this.memory.push(element);
-        console.log(this.memory)
     }
 
     delete_element(pos_num){
         this.memory.splice(pos_num, 1);
-        console.log(calculator_object.memory)
     }
-
 }
 
-const calculator_object = new Calculator(result.textContent);
+const calculator_object = new Calculator();
 
 export {
     Calculator,
