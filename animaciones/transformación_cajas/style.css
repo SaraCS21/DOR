@@ -1,0 +1,29 @@
+*{
+    margin: 0 auto;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+}
+
+.izq{
+    width: 100px;
+    height: 200px;
+
+    border-top: 40px solid transparent;
+    border-bottom: 40px solid transparent;
+    border-right: 100px solid #35cf76;
+}
+
+.dch{
+    width: 100px;
+    height: 200px;
+
+    border-top: 40px solid transparent;
+    border-bottom: 40px solid transparent;
+    border-left: 100px solid aqua;
+}
