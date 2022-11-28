@@ -34,9 +34,9 @@ body{
     width: 100px;
     height: 200px;
 
-    border-top: 40px solid transparent;
-    border-bottom: 40px solid transparent;
-    border-right: 100px solid aquamarine;
+    background: rgb(2,0,36);
+background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(9,9,121,1) 35%, rgba(0,212,255,1) 100%);
+    clip-path: polygon(0 0, 100% 31%, 100% 69%, 0 100%);
 }
 
 .dch{
@@ -44,7 +44,7 @@ body{
     width: 100px;
     height: 200px;
 
-    border-top: 40px solid transparent;
-    border-bottom: 40px solid transparent;
-    border-left: 100px solid aqua;
+    background: rgb(2,0,36);
+background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(9,9,121,1) 35%, rgba(0,212,255,1) 100%);
+    clip-path: polygon(0 31%, 100% 0, 100% 100%, 0 69%);
 }

@@ -570,16 +570,12 @@ video {
   width: 24rem;
 }
 
-.w-1\/2 {
-  width: 50%;
-}
-
 .w-full {
   width: 100%;
 }
 
-.w-2\/5 {
-  width: 40%;
+.w-1\/2 {
+  width: 50%;
 }
 
 .resize {
@@ -624,6 +620,11 @@ video {
 
 .border-solid {
   border-style: solid;
+}
+
+.bg-blue-200 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(191 219 254 / var(--tw-bg-opacity));
 }
 
 .p-4 {
