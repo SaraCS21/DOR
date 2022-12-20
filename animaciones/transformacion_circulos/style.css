@@ -30,40 +30,19 @@ div{
 
 .circulo1{
     animation: circulo1 6s ease-in-out infinite;
-    animation-delay: 3s;
 }
 
 .circulo2{
     animation: circulo2 6s ease-in-out infinite;
-    animation-delay: 3s;
 }
 
 .circulo3{
     animation: circulo3 6s ease-in-out infinite;
-    animation-delay: 3s;
 }
 
 .circulo4{
     animation: circulo4 6s ease-in-out infinite;
-    animation-delay: 3s;
 } 
-
-/* .circulo1{
-    top: 50%;
-    left: 43%;
-}
-.circulo2{
-    top: 37%;
-    left: 50%;
-}
-.circulo3{
-    top: 64%;
-    left: 50%;
-}
-.circulo4{
-    top: 50%;
-    left: 57%;
-} */
 
 @keyframes circulo1{
     0%{

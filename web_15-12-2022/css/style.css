@@ -14,6 +14,8 @@
 body{
     width: 100%;
 
+    overflow-x: hidden;
+
     background-color: var(--terciary_color);
 
     font-weight: lighter;
@@ -710,13 +712,15 @@ footer .icons{
     width: 100%;
 
     display: flex;
+    justify-content: center;
 
     font-size: 1.5rem;
     color: var(--primary_color);
 }
 
 footer .icons li{
-    width: 10%;
+    width: 5%;
+    margin: 0;
 }
 
 footer .icons li i{
