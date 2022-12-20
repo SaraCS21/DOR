@@ -300,6 +300,16 @@ section div img{
     color: var(--terciary_color);
 }
 
+#products section .info p{    
+    opacity: 1;
+    font-size: 1rem;
+}
+
+#products section .info .subtitle{
+    opacity: 0.8;
+    font-size: 0.9rem;
+}
+
 #products section div p{
     width: 80%;
     margin-bottom: 2rem;
@@ -361,10 +371,11 @@ section div img{
 
 #products section .product_img .bag{
     width: 38%; 
+    padding: 1.5rem;
 
     position: relative;
     right: -13rem;
-    bottom: 0.5rem;
+    bottom: -0.6rem;
 
     display: flex;
     flex-direction: row;
@@ -382,7 +393,7 @@ section div img{
     margin: 0;
     
     text-align: center;
-    font-size: 1.2rem;
+    font-size: 1rem;
     color: var(--primary_color);
 }
 
@@ -393,11 +404,28 @@ section div img{
     color: var(--primary_color);
 }
 
+#products section .product_img .tag{
+    top: -2rem;
+    left: 15rem;
+
+    z-index: 5;
+}
+
+#products section .product_img .tag p{
+    width: 4rem;
+    margin-bottom: 0;
+
+    font-size: 1.5rem;
+}
+
+#products section .product_img .tag i{
+    font-size: 8rem;
+}
+
 /* Our Products */
 
 #our_products{
     width: 100%;
-    margin-top: 5rem;
 
     display: flex;
     flex-direction: column;
@@ -491,6 +519,7 @@ section div img{
     font-size: 0.9rem;
     opacity: 0.8;    
 
+    text-align: center;
     padding-bottom: 1.2rem;
 }
 
@@ -639,3 +668,359 @@ section div img{
 
 /* Footer */
 
+footer{
+    width: 100%;
+    padding: 2.5rem;
+    padding-bottom: 1.5rem;
+
+    display: flex;
+    flex-direction: column;
+
+    background-color: #dcd2c7;
+}
+
+footer ul{
+    width: 50%;
+    margin-bottom: 2rem;
+
+    display: flex;
+    flex-direction: row;
+
+    list-style: none;
+}
+
+footer .menu li{
+    width: 100%;
+
+    text-align: center;
+    font-size: 1.2rem;
+    color: var(--primary_color);
+
+    opacity: 0.7;
+    transition: 0.5s;
+    cursor: pointer;
+}
+
+footer .menu li:hover{
+    opacity: 1;
+    transition: 0.5s;
+}
+
+footer .icons{
+    width: 100%;
+
+    display: flex;
+
+    font-size: 1.5rem;
+    color: var(--primary_color);
+}
+
+footer .icons li{
+    width: 10%;
+}
+
+footer .icons li i{
+    padding: 0.5rem;
+
+    border: 1px solid #c5bbb1;
+    border-radius: 50%;
+    transition: 0.5s;
+
+    cursor: pointer;
+}
+
+footer .icons li i:hover{
+    border: 1px solid var(--primary_color);
+    transition: 0.5s;
+}
+
+footer div{
+    width: 100%;
+    padding-top: 2rem;
+
+    border-top: 1px solid #c5bbb1;
+
+    display: flex;
+    font-size: 0.8rem;
+    color: var(--primary_color);
+}
+
+footer div p{
+    width: 70%;
+}
+
+footer div ul{
+    width: 70%;
+}
+
+footer div ul li{
+    cursor: pointer;
+}
+
+@media (max-width: 400px) {
+    
+    /* Menú hamburguesa */
+
+    nav{
+        display: none;
+    }
+
+    /* Main */
+
+    main{
+        width: 90%;
+    }
+
+    section{
+        flex-wrap: wrap;
+    }
+
+    section #title{
+        width: 100%;
+        margin-left: 0rem;
+        padding-bottom: 1rem;
+
+        text-align: center;
+        font-size: 1.8rem;
+    }
+
+    section div img{
+        width: 100%;
+    }
+    
+    #image{
+        width: 100%;
+        position: relative;
+    }
+
+    #image .plus{
+        font-size: 0.7rem;
+    }
+
+    #image .plus2{
+        top: 5.2rem;
+        right: 5rem;
+    }
+    
+    #image .plus3{
+        top: 4.8rem;
+        right: 10rem;
+    }
+
+    .tag{
+        top: 1rem;
+        left: 16.5rem;
+    }
+
+    .tag i{
+        font-size: 4.5rem;
+    }
+
+    .tag p{
+        font-size: 1rem;
+    }
+
+    #products{
+        margin-top: 2rem;
+    }
+
+    #products #subtitle h2{
+        font-size: 2.6rem;
+        text-align: center;
+    }
+
+    #products section div h3{
+        font-size: 2.2rem;
+    }
+
+    #products section .info p{    
+        font-size: 0.9rem;
+    }
+
+    #products section .info .subtitle{
+        font-size: 0.8rem;
+    }
+
+    #products section div a{
+        font-size: 0.9rem;
+    }
+
+    #products section .product_img .box{
+        width: 100%;
+        height: 20rem;
+    
+        top: 0rem;
+        right: 0rem;
+    }
+
+    #products section .product_img .bag{
+        width: 85%; 
+        padding: 1.5rem;
+    
+        position: relative;
+        right: 0rem;
+        bottom: 0rem;
+    }
+
+    #products section .product_img .bag p{
+        font-size: 0.8rem;
+    }
+
+    #products section .product_img .bag i{
+        padding-right: 0.8rem;
+        font-size: 1.5rem;
+    }
+
+    #products section .product_img .tag{
+        top: -2.8rem;
+        left: 7.5rem;
+    }
+
+    #products section .product_img .tag p{
+        width: 2.5rem;
+    
+        font-size: 1rem;
+    }
+    
+    #products section .product_img .tag i{
+        font-size: 5rem;
+    }
+
+    #our_products{
+        margin-top: 1rem;
+    }
+
+    #our_products #subtitle h2{
+        text-align: center;
+        font-size: 3rem;
+    }
+
+    #our_products section{
+        margin-bottom: 1rem;
+        justify-content: flex-start;
+    }
+
+    #our_products section .menu{
+        width: 100%;
+    }
+
+    #our_products section .menu ul{
+        display: flex;
+        flex-direction: row;
+
+        width: 100%;
+    }
+
+    #our_products section .menu ul .selected div{
+        width: 4rem;
+
+        top: 0.55rem;
+        left: -0.4rem;
+    }
+
+    #our_products section .images{
+        width: 100%;
+        margin-left: 0rem;
+
+        flex-wrap: wrap;
+    }
+
+    #our_products section .images div:nth-child(2),
+    #our_products section .images div:nth-child(3){
+        display: none;
+    }
+
+    #our_products section .images div .tag{
+        top: 5rem;
+        left: 8rem;
+    }
+
+    /* Need */
+
+    #need{
+        padding: 2rem;
+    }
+
+    #need section{
+        margin-top: 0rem;
+        flex-wrap: wrap;
+    }
+
+    #need section .images{
+        width: 100%;
+        height: 32rem;
+    }
+    
+
+    #need section .images img{
+        position: absolute;
+    
+        width: 8rem;
+    }
+    
+    #need section .images img:nth-child(1){
+        top: 12rem;
+        left: 8.2rem;
+    }
+    
+    #need section .images img:nth-child(2){
+        width: 10rem;
+    
+        top: 0rem;
+        left: 0rem;
+    }
+    
+    #need section .images img:nth-child(3),
+    #need section .images img:nth-child(4){
+        display: none;
+    }
+
+    #need section .content{
+        width: 100%;
+        height: 22rem;
+        padding-bottom: 8rem;
+    }
+
+    #need section .content p{
+        padding-right: 0rem;
+    }
+
+    #need section .content button{
+        margin-right: 7.4rem;
+    }
+
+    #need section .plant{
+        display: none;
+    }
+
+    /* Footer */
+
+    footer ul{
+        width: 100%;
+        align-items: center;
+    }
+
+    footer .menu li{
+        font-size: 0.9rem;
+    }
+
+    footer .icons{
+        font-size: 1.1rem;
+    }
+
+    footer div{
+        flex-wrap: wrap;
+
+        font-size: 0.7rem;
+    }
+    
+    footer div p{
+        width: 100%;
+    }
+    
+    footer div ul{
+        width: 100%;
+        font-size: 0.6rem;
+    }
+    
+}
