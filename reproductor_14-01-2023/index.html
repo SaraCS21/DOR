@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="./style.css">
+    <title>Document</title>
+</head>
+<body>         
+    <div class="container show-controls">
+        <div class="wrapper">
+            <div class="video-timeline">
+                <div class="progress-area">
+                    <span>00:00</span>
+                    <div class="progress-bar"></div>
+                </div>
+            </div>
+            <ul class="video-controls">
+                <li class="options left">
+                    <button class="volume"><i class='bx bx-volume-full'></i></button>
+                    <input type="range" min="0" max="1" step="any">
+                    <div class="video-timer">
+                        <p class="current-time">00:00</p>
+                        <p class="separator"> / </p>
+                        <p class="video-duration">00:00</p>
+                    </div>
+                </li>
+                <li class="options center">
+                    <button class="skip-backward"><i class='bx bx-skip-previous' ></i></button>
+                    <button class="play-pause"><i class='bx bx-play' ></i></button>
+                    <button class="skip-forward"><i class='bx bx-skip-next' ></i></button>
+                </li>
+                <li class="options right">
+                    <div class="playback-content">
+                        <button class="playback-speed"><span class="material-symbols-rounded">v</span></button>
+                        <ul class="speed-options">
+                            <li data-speed="2">2x</li>
+                            <li data-speed="1.5">1.5x</li>
+                            <li data-speed="1" class="active">Normal</li>
+                            <li data-speed="0.75">0.75x</li>
+                            <li data-speed="0.5">0.5x</li>
+                        </ul>
+                    </div>
+                    <button class="fullscreen"><i class='bx bx-fullscreen' ></i></button>
+                </li>
+            </ul>
+        </div>
+        <video>
+            <source src="./source/videos/video.mp4" type="video/mp4">
+        </video>
+    </div>
+
+    <script src="./index.js"></script>
+</body>
+</html>
