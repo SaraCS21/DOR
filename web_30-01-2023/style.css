@@ -1,0 +1,281 @@
+@import url("./assets/fonts/Ubuntu-Bold.ttf");
+@import url("./assets/fonts/Ubuntu-Medium.ttf");
+@import url("./assets/fonts/Ubuntu-Regular.ttf");
+
+*{
+    margin: 0 auto;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --marine_blue: hsl(213, 96%, 18%);
+    --purplish_blue: hsl(243, 100%, 62%);
+    --pastel_blue: hsl(228, 100%, 84%);
+    --light_blue: hsl(206, 94%, 87%);
+    --strawberry_red: hsl(354, 84%, 57%);
+
+    --cool_gray: hsl(231, 11%, 63%);
+    --light_gray: hsl(229, 24%, 87%);
+    --magnolia: hsl(217, 100%, 97%);
+    --alabaster: hsl(231, 100%, 99%);
+    --white: hsl(0, 0%, 100%);
+
+    --font_size: 16px;
+    --font_family_regular: "Ubuntu-Regular", sans-serif;
+    --font_family_medium: "Ubuntu-Medium", sans-serif;
+    --font_family_bold: "Ubuntu-Bold", sans-serif;
+} 
+
+body{
+    font-size: var(--font_size);
+    font-family: var(--font_family_regular);
+}
+
+#desktop{
+    display: none;
+}
+
+#mobile{
+    display: block;
+}
+
+nav{
+    width: 100%;
+    height: 21vh;
+    position: relative;
+}
+
+nav img{
+    width: 100%;
+    height: 100%;
+}
+
+nav section{
+    width: 50%;
+    position: absolute;
+    top: 20%;
+    left: 25%;
+
+    display: flex;
+}
+
+nav section div{
+    width: 2rem;
+    height: 2rem;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    border-radius: 100%;
+    border:1px solid var(--alabaster);
+
+    color: var(--alabaster);
+    font-size: calc(var(--font_size) - 3px);
+    font-weight: bold;
+}
+
+main{
+    width: 100%;
+    height: 69vh;
+    position: relative;
+
+    background-color: var(--magnolia);
+}
+
+main #container {
+    width: 90%;
+    padding: 1.5rem;
+
+    position: absolute;
+    top: -15%;
+    left: 5%;
+
+    border-radius: 0.7rem;
+    background-color: var(--white);
+}
+
+main section h1{
+    margin-bottom: 1rem;
+
+    font-weight: bold;
+    font-size: calc(var(--font_size) + 9px);
+    color: var(--marine_blue);
+}
+
+main section p{
+    line-height: 1.5rem;
+
+    font-weight: 500;
+    color: var(--cool_gray);
+}
+
+main #form{
+    margin-top: 1.5rem;
+
+    display: flex;
+    flex-wrap: wrap;
+}
+
+main #form input,
+main #form label {
+    width: 100%;
+}
+
+main #form label{
+    margin-bottom: 0.3rem;
+
+    font-size: calc(var(--font_size) - 3px);
+    color: var(--marine_blue);
+}
+
+main #form input{
+    padding: 0.6rem;
+    margin-bottom: 1rem;
+
+    border: 0.2px solid var(--light_gray);
+    border-radius: 0.2rem;
+}
+
+main #info button{
+    display: none;
+}
+
+footer{
+    height: 10vh;
+
+    display: flex;
+    align-items: center;
+}
+
+button{
+    padding: 0.8rem;
+    margin-right: 5%;
+
+    color: var(--magnolia);
+    background-color: var(--marine_blue);
+
+    border: 0px;
+    border-radius: 0.2rem;
+}
+
+@media (min-width: 1440px){
+    #desktop{
+        display: block;
+    }
+
+    #mobile, footer{
+        display: none;
+    }
+
+    body{
+        width: 100%;
+        height: 100vh;
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        background-color: var(--magnolia);
+    }
+
+    main{
+        width: 60%;
+        height: 55vh;
+
+        border: 1rem;
+        box-shadow: -4px 7px 14px -6px rgba(0,0,0,0.27);
+    }
+
+    main #container{
+        width: 100%;
+        height: 55vh;
+
+        position: relative;
+
+        display: flex;
+        flex-wrap: wrap;
+
+        position: relative;
+        top: 0;
+        left: 0;
+    }
+
+    main #desktop{
+        width: 30%;
+        height: 94%;
+
+        position: absolute;
+        top: 3%;
+        left: -3%;
+
+        display: flex;
+        align-items: center;
+        justify-content: end;
+    }
+
+    main #desktop img{
+        width: 100%;
+        height: 100%;
+    }
+
+    main #desktop section{
+        display: flex;
+        flex-direction: column;
+
+        top: 10%;
+    }
+
+    main #desktop section .step{
+        width: 100%;
+        margin-bottom: 2rem;
+
+        display: flex;
+
+        border: 0px;
+    }
+
+    main #desktop section div{
+        width: 20%;
+        display: flex;
+    }
+
+    main #desktop section .step .info{
+        width: 80%;
+
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+
+        border: 0px;
+    }
+
+    main #desktop section .step .info p{
+        width: 100%;
+        padding-left: 1rem;
+
+        font-size: calc(var(--font_size) - 4px);
+    }
+
+    main #desktop section .step .info p span{
+        font-weight: bold;
+        color: var(--white);
+
+        font-size: calc(var(--font_size) - 1px);
+    }
+
+    main #info{
+        width: 60%;
+        margin-top: 2rem;
+        margin-left: 30%;
+    }
+
+    main #info button{
+        display: block;
+
+        position: absolute;
+        bottom: 4%;
+        right: 7%;
+    }
+}
